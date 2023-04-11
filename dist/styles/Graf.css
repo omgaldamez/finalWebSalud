@@ -1,0 +1,14 @@
+.pag3{
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  /*border: 1px solid green;*/
+  }
+  
+  

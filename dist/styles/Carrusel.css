@@ -1,0 +1,83 @@
+
+  .carrusel {
+    margin-top: 33vh;
+    max-height: 300px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .carrusel-items {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 0px 0px;
+    margin-left: 1%;
+    margin-right: 2%;
+  }
+  
+  .carrusel-items:hover {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  
+  .carrusel-item {
+    overflow-y: hidden;
+    min-width: 300px;
+    max-width: 300px;
+    height: 200px;
+    outline: 2px solid #ede9d0;
+  }
+  
+  .carrusel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carrusel-item a {
+    opacity: 0;
+    text-decoration: none;
+    color: #dfe0df;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+  }
+  
+  .carrusel-item:hover {
+    overflow-y: clip;
+    opacity: 90%;
+    transform: scale(1.2);
+    height: 300px;
+  }
+  
+  .carrusel-item:hover a{
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    padding: auto;
+    width: 300px;
+    height: 100%;
+  }
+  
+  .first-txt {
+    text-align: center;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    color: #dfe0df;
+  }
+  
+
+  .pagCarr{
+    position: absolute;
+  height: 100vh;
+  width: 100vw;
+/*border: 1px solid green;*/
+  }
+  
+      .pp{
+      position: absolute;
+    height: 100vh;
+    width: 100vw;
+  /*border: 1px solid green;*/
+  }
+  
