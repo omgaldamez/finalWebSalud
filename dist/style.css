@@ -146,3 +146,25 @@ h1{
 background-color: burlywood;
 /*border: 1px solid green;*/
 }
+
+#PAG3{
+  position: relative;
+  margin: 0;
+  padding: 0;
+background-color: chocolate;
+/*border: 1px solid green;*/
+}
+
+#PAG4{
+  position: relative;
+  margin: 0;
+  padding: 0;
+/*border: 1px solid green;*/
+}
+
+#PAG5{
+  position: relative;
+  margin: 0;
+  padding: 0;
+/*border: 1px solid green;*/
+}
