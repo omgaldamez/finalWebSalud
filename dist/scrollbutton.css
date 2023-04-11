@@ -4,9 +4,7 @@
 #scrollPag a {
   position: absolute;
     padding-top: 80px;
-    height: 20%;
-    min-height: 20%;
-    text-align: center;
+    bottom:0;
   }
 
 

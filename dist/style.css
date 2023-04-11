@@ -47,17 +47,17 @@ body {
 }
 
 .header{
+  position: relative;
   color: whitesmoke;
   opacity: 1;
   font-family: 'Alegreya Sans', sans-serif;
-  font-size: 80px;
+  font-size: 10vh;
   background-color: rgba(71, 67, 67, 0.3);
   border-radius: 15px;
   /*border: 1px solid red;*/
   margin: auto;
   transition: .3s;
-  max-width: 50%;
-  max-height: 80%;
+  display: flex;
 }
 
 .header:hover {
@@ -102,16 +102,13 @@ body {
 /*border: 1px solid green;*/
 }
 
-.textAbajo{
-  position: absolute;
-  height: 20vh;
-  width: 20vw;
-  margin-top: 50%;
-}
-
 .textoHeader{
+  position: relative;
+  display: flex;
   margin: auto;
   padding: auto;
+  height: 80vh;
+  max-height: 80vh;
 }
 
 h1{
