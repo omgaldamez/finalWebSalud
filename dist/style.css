@@ -135,8 +135,7 @@ h1{
   position: relative;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  max-width: 100vw;
+  background-color: chocolate;
 }
 
 #PAG2{
@@ -163,6 +162,13 @@ background-color: chocolate;
 }
 
 #PAG5{
+  position: relative;
+  margin: 0;
+  padding: 0;
+/*border: 1px solid green;*/
+}
+
+#PAG6{
   position: relative;
   margin: 0;
   padding: 0;
