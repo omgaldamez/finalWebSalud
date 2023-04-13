@@ -47,6 +47,7 @@ h1{
   position: relative;
   flex: 50%;
   padding: 10px;
+  bottom: 0;
 }
 
 .foreground {
@@ -61,6 +62,22 @@ h1{
   height: 100vh;
   background-size: cover;
   background-repeat: none;
+}
+
+.grafico {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 70vh;
+  top:0;
+}
+
+.grafico2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 70vh;
+  top:0;
 }
 
 .header{
@@ -93,9 +110,41 @@ h1{
   max-height: 100%;
 }
 
+.pruebaGraf{
+  padding: 0;
+  width: 50vw;
+  margin: 0;
+position: relative;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.pruebaGraf2{
+  padding: 0;
+  width: 50vw;
+  margin: 0;
+position: relative;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.rowBoton {
+  display: flex;
+  height: 10vh;
+}
+
 .rowCont {
   display: flex;
   height: 80vh;
+}
+
+.rowContBoton {
+  display: flex;
+  height: 70vh;
 }
 
 .rowScroll {
@@ -111,12 +160,6 @@ h1{
   text-align: center;
   width: auto;
   height: 20vh;
-}
-
-.tamFull{
-  height: 100vh;
-  width: 100vw;
-/*border: 1px solid green;*/
 }
 
 .textoHeader{
@@ -147,6 +190,8 @@ h1{
   margin: 0;
   padding: 0;
 background-color: burlywood;
+height: 100vh;
+width: 100vw;
 /*border: 1px solid green;*/
 }
 
@@ -155,6 +200,8 @@ background-color: burlywood;
   margin: 0;
   padding: 0;
 background-color: chocolate;
+height: 100vh;
+width: 100vw;
 /*border: 1px solid green;*/
 }
 
@@ -162,6 +209,8 @@ background-color: chocolate;
   position: relative;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
 /*border: 1px solid green;*/
 }
 
@@ -169,24 +218,32 @@ background-color: chocolate;
   position: relative;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
 /*border: 1px solid green;*/
 }
 
-#PAG6{
+#PAG6{    
   position: relative;
   margin: 0;
   padding: 0;
-/*border: 1px solid green;*/
+  height: 100vh;
+  width: 100vw;
 }
 
 #PAG7{
   position: relative;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 #PAG8{
   position: relative;
   margin: 0;
   padding: 0;
+  background-color: teal;
+  height: 100vh;
+  width: 100vw;
 }
