@@ -9,7 +9,7 @@
 
 
   .scrollBoton a {
-    position: absolute;
+    position: relative;
     bottom: 20px;
     left: 50%;
     z-index: 2;

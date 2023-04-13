@@ -14,6 +14,12 @@ body {
   overflow-x: hidden;
 }
 
+h1{
+  
+  max-width: 50%;
+  max-height: 80%;
+}
+
 .background {
   background-image: url(VH.jpg);
   opacity: 100%;
@@ -30,6 +36,11 @@ body {
 
 .clearer {
 	clear: both;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px;
 }
 
 .foreground {
@@ -76,14 +87,14 @@ body {
   max-height: 100%;
 }
 
-.land2{
-  position: absolute;
+.rowCont {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /*border: 1px solid green;*/
-  margin: 0% 33%;
-  height: 100vh;
+  height: 80vh;
+}
+
+.rowScroll {
+  display: flex;
+  height: 20vh;
 }
 
 .subtitulo{
@@ -109,12 +120,6 @@ body {
   padding: auto;
   height: 80vh;
   max-height: 80vh;
-}
-
-h1{
-  
-  max-width: 50%;
-  max-height: 80%;
 }
 
 #landing{
@@ -173,15 +178,4 @@ background-color: chocolate;
   margin: 0;
   padding: 0;
 /*border: 1px solid green;*/
-}
-
-.row {
-  display: flex;
-  height: 80vh;
-}
-
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 50%;
-  padding: 10px;
 }
