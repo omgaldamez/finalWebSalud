@@ -2,9 +2,8 @@
 .grafico {
   display: flex;
   position: relative;
-  margin-top: 20vh;
-  height: 80vh;
-  width: 50vw;
+  overflow-clip-margin: content-box;
+  overflow: clip;
 }
 
 .infoGrafico {

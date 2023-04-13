@@ -1,16 +1,8 @@
 
-.wrapper {
+.fondoScroll {
   animation: scroll 70s linear infinite;
   background: url("fondoRothkoLarge.jpg"), #111111;
   background-size: cover;
-  background-repeat: none;
-  color: #eee;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
   position: relative;
   
 }
@@ -22,7 +14,7 @@
 }
 
 @media (prefers-reduced-motion) {
-  .wrapper {
+  .fondoScroll {
     animation: scroll 200s linear infinite;
   }
 }

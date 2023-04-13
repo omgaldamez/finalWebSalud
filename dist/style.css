@@ -43,6 +43,12 @@ h1{
   padding: 10px;
 }
 
+.column2 {
+  position: relative;
+  flex: 50%;
+  padding: 10px;
+}
+
 .foreground {
   background-image: url(HRAEPY.jpg);
   opacity: 100%;
@@ -129,13 +135,6 @@ h1{
   /*border: 1px solid red;*/
 }
 
-
-#Carr{
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
 #Graf{
   position: relative;
   margin: 0;
@@ -178,4 +177,16 @@ background-color: chocolate;
   margin: 0;
   padding: 0;
 /*border: 1px solid green;*/
+}
+
+#PAG7{
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+#PAG8{
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
