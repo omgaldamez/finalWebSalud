@@ -174,3 +174,14 @@ background-color: chocolate;
   padding: 0;
 /*border: 1px solid green;*/
 }
+
+.row {
+  display: flex;
+  height: 80vh;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+}
