@@ -171,6 +171,14 @@ justify-content: center;
   max-height: 80vh;
 }
 
+.textGraf {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 70vh;
+  top:0;
+}
+
 #landing{
   position: relative;
   margin: 0;
