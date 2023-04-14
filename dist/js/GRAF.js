@@ -23,12 +23,6 @@ d3.json(endpoint_arteGraf).then((datosjson) => {
 
   //console.log("PINTOR= " + PintorCarrusel);
 
-  d3.selectAll(".grafico svg").on("mouseenter", function () {
-    //d3.select(this).style("fill", "#FFFFFF");
-    //d3.select(this).transition.duration(350).style("fill", "#FFFFFF");
-    console.log("ENTRA HOVER");
-  });
-
   d3.select(".grafico svg").on("mouseenter", function () {
     //d3.select(this).style("fill", "#FFFFFF");
     //d3.select(this).transition.duration(350).style("fill", "#FFFFFF");
@@ -43,15 +37,19 @@ d3.json(endpoint_arteGraf).then((datosjson) => {
         //d3.select(this).attr("transform", "translate(0,-150)");
 
       });
-
-      d3.select("#" + idtemp).on("mouseleave", function () {
-        //d3.select(this).attr("transform", "translate(0,0)");
-      });
-
-      //console.log("Entra aaaaaafor");
   });
 
-
+  d3.selectAll(".grafico text").on("mouseenter", function () {
+    d3.select(this).style("fill", "#FFFFFF");
+    //d3.select(this).transition.duration(350).style("fill", "#FFFFFF");
+    console.log("ENTRA HOVER");
+  });
+  
+  d3.selectAll(".grafico g").on("mouseenter", function () {
+    d3.select(this).style("fill", "#FFFFFF");
+    //d3.select(this).transition.duration(350).style("fill", "#FFFFFF");
+    console.log("ENTRA HOVER");
+  });
   
   //Asignar Circulos
 });
