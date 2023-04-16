@@ -50,6 +50,10 @@ h1{
   bottom: 0;
 }
 
+.fondoViz{
+  background-color: #152A44;
+}
+
 .foreground {
   background-image: url(HRAEPY.jpg);
   opacity: 100%;
@@ -142,9 +146,19 @@ justify-content: center;
   height: 80vh;
 }
 
+.rowContSinScroll {
+  display: flex;
+  height: 90vh;
+}
+
 .rowContBoton {
   display: flex;
   height: 70vh;
+}
+
+.rowHeader {
+  display: flex;
+  height: 10vh;
 }
 
 .rowScroll {
@@ -162,96 +176,10 @@ justify-content: center;
   height: 20vh;
 }
 
-.textoHeader{
-  position: relative;
-  display: flex;
-  margin: 0;
-  padding: auto;
-  height: 80vh;
-  max-height: 80vh;
-}
-
-.textGraf {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  height: 70vh;
-  top:0;
-}
-
-#landing{
+.tamFull{
   position: relative;
   margin: 0;
   padding: 0;
-  /*border: 1px solid red;*/
-}
-
-#Graf{
-  position: relative;
-  margin: 0;
-  padding: 0;
-  background-color: chocolate;
-}
-
-#PAG2{
-  position: relative;
-  margin: 0;
-  padding: 0;
-background-color: burlywood;
-height: 100vh;
-width: 100vw;
-/*border: 1px solid green;*/
-}
-
-#PAG3{
-  position: relative;
-  margin: 0;
-  padding: 0;
-background-color: chocolate;
-height: 100vh;
-width: 100vw;
-/*border: 1px solid green;*/
-}
-
-#PAG4{
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-/*border: 1px solid green;*/
-}
-
-#PAG5{
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-/*border: 1px solid green;*/
-}
-
-#PAG6{    
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-}
-
-#PAG7{
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-}
-
-#PAG8{
-  position: relative;
-  margin: 0;
-  padding: 0;
-  background-color: teal;
   height: 100vh;
   width: 100vw;
 }

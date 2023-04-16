@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles/gradiente.css">
   <link rel="stylesheet" href="styles/grafico.css">
   <link rel="stylesheet" href="styles/fTrama.css">
+  <link rel="stylesheet" href="styles/tabla.css">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +21,7 @@
 <body>
 <!-- Landing animado 2 imagenes -->
 <main>
-  <div id="landing">
+  <div id="landing" class="tamFull">
   <div class="background"></div>
   <div class="foreground"></div>
     <div class="textoHeader rowCont">
@@ -36,7 +37,7 @@
   </div>
 </div>
   
-<div id="PAG2" class="gradiente">
+<div id="PAG2" class="gradiente tamFull">
   <div class="rowCont">
   <h1 class='header'>PAG2</h1>
   </div>
@@ -49,20 +50,60 @@
 </div>
 </div>
 
-<div id="PAG3" class="gradiente2">
-  <div class="rowCont">
-  <h1 class='header'>PAG3</h1>
-</div>
-  
-<div class="rowScroll">
-  <section id="scrollPag" class="scrollBoton">
-    <a href="#PAG4" target="_top"><span></span><span></span><span></span>PAG4</a>
-  </section>
+<div id="PAG3" class="gradiente2 tamFull">
+  <div class="rowHeader">
+    <p class="tituloTabla">Indicadores de salud</p>
+  </div>
+  <div class="rowContSinScroll tablaSalud" style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Indicador de Salud</th>
+          <th>Definición</th>
+          <th>Datos actuales en México <sup>1</sup></th>
+          <th>Comparación con otros países <sup>1,2</sup></th>
+          <th>Utilidades</th>
+          <th>Limitaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gasto per cápita en salud</td>
+          <td>La cantidad promedio de dinero que se gasta en salud por cada individuo en un país o región.</td>
+          <td>En 2020, el gasto per cápita en salud en México fue de aproximadamente 1,024 dólares estadounidenses.</td>
+          <td>En comparación con otros países de la OCDE, México se encuentra por debajo del promedio de gasto per cápita en salud, que en 2019 fue de 4,003 dólares estadounidenses.</td>
+          <td>Permite comparar el gasto en salud por persona en diferentes países y regiones.</td>
+          <td>No toma en cuenta la calidad de los servicios de salud.</td>
+        </tr>
+        <tr>
+          <td>PIB</td>
+          <td>La medida de la salud económica de un país, que representa el valor de mercado de todos los bienes y servicios finales producidos dentro de un país en un período de tiempo determinado.</td>
+          <td>En 2020, el PIB per cápita en México fue de aproximadamente 9,052 dólares estadounidenses.</td>
+          <td>En comparación con otros países de América Latina y el Caribe, México se encuentra por encima del promedio de PIB per cápita, que en 2020 fue de 8,104 dólares estadounidenses.</td>
+          <td>Refleja la salud económica de un país y puede utilizarse para predecir el gasto futuro en salud.</td>
+          <td>No refleja necesariamente la calidad de vida o bienestar de la población.</td>
+        </tr>
+        <tr>
+          <td>Gasto público total en salud</td>
+          <td>El monto de dinero que el gobierno gasta en salud en un país o región.</td>
+          <td>En 2020, el gasto público total en salud en México fue de aproximadamente el 2.6% del PIB.</td>
+          <td>En comparación con otros países de la OCDE, México se encuentra por debajo del promedio de gasto público total en salud, que en 2019 fue de aproximadamente el 7.8% del PIB.</td>
+          <td>Permite evaluar el compromiso del gobierno con la salud pública y la inversión en el sector de la salud.</td>
+          <td>No toma en cuenta el gasto privado en salud.</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6"><small id="fuente1">Fuente: Datos obtenidos de la Organización para la Cooperación y el Desarrollo Económico (OCDE) <sup>[<a href="https://www.oecd.org/" target="_blank">1</a>]</sup></small><br>
+          <small id="fuente2">Fuente: Datos obtenidos del Banco Mundial <sup>[<a href="https://datos.bancomundial.org/tema/salud" target="_blank">2</a>]</sup></small></td>
+        </tr>
+      </tfoot>
+    </table>
 </div>
 </div>
 
 
-<div id="PAG4" class="trama">
+<div id="PAG4" class="trama tamFull">
   <div class="rowCont">
   <h1 class='header'>PAG4</h1>
 </div>
@@ -75,7 +116,7 @@
 </div>
 
 
-<div id="PAG5" class="trama2">
+<div id="PAG5" class="trama2 tamFull">
   <div class="rowCont">
   <h1 class='header'>PAG5</h1>
 </div>
@@ -88,7 +129,7 @@
 </div>
 
 
-<div id="PAG6" class="gradiente2">
+<div id="PAG6" class="fondoViz tamFull">
   
 <div class="rowBoton"></div>
 <div class="rowContBoton">
@@ -120,7 +161,7 @@
 </div>
 
 <!-- Fondo animado scroll inf -->
-  <div id="PAG7" class="fondoScroll">
+  <div id="PAG7" class="fondoScroll tamFull">
   <div class="rowCont">
     <h1 class='header'>PAG7</h1>
   </div>
@@ -132,7 +173,7 @@
   </div>
 </div>
 
-<div id="PAG8">
+<div id="PAG8" class="gradiente tamFull">
 
   <div class="rowCont">
     <h1 class='header'>PAG8</h1>

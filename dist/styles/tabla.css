@@ -1,0 +1,75 @@
+
+.textoHeader{
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: auto;
+    height: 80vh;
+    max-height: 80vh;
+  }
+  
+  .textGraf {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 70vh;
+    top:0;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2% 5%;
+    max-width: 100%;
+  }
+  
+  th, td {
+    text-align: center;
+    color:whitesmoke;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tablaSalud{
+  margin: 0% 1%;
+  }
+  
+
+  .tablaSalud a{
+    color: azure;
+    }
+
+  /*th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }*/
+  
+  .tituloTabla{
+    position: relative;
+    color: whitesmoke;
+    font-size: 40px;
+    margin: auto;
+    display: flex;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    table {
+      font-size: 12px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    table {
+      font-size: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+    table {
+      font-size: 8px;
+    }
+  }
