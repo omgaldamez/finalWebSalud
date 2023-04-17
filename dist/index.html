@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./fondoCarr.css">
   <link rel="stylesheet" href="styles/scrollbar.css">
   <link rel="stylesheet" href="styles/gradiente.css">
-  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/menu.css">
   <link rel="stylesheet" href="styles/grafico.css">
   <link rel="stylesheet" href="styles/fTrama.css">
   <link rel="stylesheet" href="styles/tabla.css">
@@ -29,8 +29,18 @@
     <nav class="menu">
       <ul>
         <li><a href="#landing" target="_top">Home</a></li>
-        <li><a href="#defIndicadores">Indicadores de Salud</a></li>
-        <li><a href="#">Menu Item 3</a></li>
+        <li><a href="#defIndicadores" target="_top">Indicadores de Salud</a></li>
+        <li><a href="#pagTablaIndicadores" target="_top">Tabla Indicadores</a></li>
+        
+        <li><a href="#latamIndicadores" target="_top">Indicadores LATAM</a></li>
+        <li><a href="#sankeyHospitales" target="_top">Sankey Hospitales</a></li>
+        <li><a href="#mapaMex" target="_top">Mapa Interactivo</a></li>
+      
+        <li><a href="#vizMexS" target="_top">Visualización S Mex</a></li>
+        <li><a href="#pagArrow" target="_top">Comparativo Sexenios</a></li>
+        <li><a href="#pagHallazgos" target="_top">Hallazgos</a></li>
+        <li><a href="#pagComparativos" target="_top">Comparativos</a></li>
+      
       </ul>
     </nav>
   </div>
@@ -62,7 +72,7 @@
    
   </div>
 </div>
-<div id="PAG2" class="tamFull">
+<div id="pagIntroColumnas" class="tamFull">
   <div class="rowBoton">
   </div>
   <div class="rowCont tresColumnas">
@@ -73,11 +83,11 @@
   
 </div>
 
-<div id="PAG3" class="tamFull">
+<div id="pagTablaIndicadores" class="tamFull">
   <div class="rowHeader">
     <p class="tituloTabla">Indicadores de salud</p>
   </div>
-  <div class="rowContSinScroll tablaSalud" style="overflow-x:auto;">
+  <div class="rowContSinScroll" style="overflow-x:auto;">
     <table>
       <thead>
         <tr>
@@ -126,82 +136,122 @@
 </div>
 </div>
 
-<div id="PAG4" class="trama tamFull">
+<div id="latamIndicadores" class="trama tamFull">
   <div class="rowCont">
-  <h1 class='header'>PAG4</h1>
+  <h1 class='header'>Gráfica indicadores LATAM</h1>
 </div>
   
 <div class="rowScroll">
   <section id="scrollPag" class="scrollBoton">
-    <a href="#PAG5" target="_top"><span></span><span></span><span></span>PAG5</a>
+    <a href="#sankeyHospitales" target="_top"><span></span><span></span><span></span>Sankey Hospitales</a>
+  </section>
+</div>
+</div>
+
+<div id="sankeyHospitales" class="trama2 tamFull">
+  <div class="rowCont">
+  <h1 class='header'>Sankey Hospitales</h1>
+</div>
+  
+<div class="rowScroll">
+  <section id="scrollPag" class="scrollBoton">
+    <a href="#mapaMex" target="_top"><span></span><span></span><span></span>Mapa Mex</a>
   </section>
 </div>
 </div>
 
 
-<div id="PAG5" class="trama2 tamFull">
+<div id="mapaMex" class="trama2 tamFull">
   <div class="rowCont">
-  <h1 class='header'>PAG5</h1>
+  <h1 class='header'>Mapa Interactivo Mex</h1>
 </div>
   
 <div class="rowScroll">
   <section id="scrollPag" class="scrollBoton">
-    <a href="#PAG6" target="_top"><span></span><span></span><span></span>PAG6</a>
+    <a href="#mapaTresMex" target="_top"><span></span><span></span><span></span>mapaTresMex</a>
   </section>
 </div>
 </div>
 
 
-<div id="PAG6" class="fondoViz tamFull">
-  
-
-  
-<div class="rowBoton"></div>
-<div class="rowContBoton">
-    <div class="pruebaGraf">
-    <div class="grafico"></div>
-  </div>
-  
-  <div class="pruebaGraf2">
-    <div class="infoGrafico">
-      <div class="imagDispGrafico"></div>
-      <div class="textDispGrafico">
-        <p id="TC1">1</p>
-        <p id="TC2">2</p>
-        <p id="TC3">3</p>
-        <p id="TC4">4</p>
-        <p id="TC5">5</p>
-        <p id="TC6">6</p>
-        <p id="TC7">7</p>
-      </div>
-  </div>
-  </div>
-  
+<div id="mapaTresMex" class="gradiente2 tamFull">
+  <div class="rowCont">
+  <h1 class='header'>Comparación Mapas Interactivo Mex (opcional)</h1>
 </div>
+  
 <div class="rowScroll">
   <section id="scrollPag" class="scrollBoton">
-    <a href="#PAG7" target="_top"><span></span><span></span><span></span>PAG7</a>
+    <a href="#vizMexS" target="_top"><span></span><span></span><span></span>Mex S</a>
   </section>
 </div>
 </div>
 
-<!-- Fondo animado scroll inf -->
-  <div id="PAG7" class="fondoScroll tamFull">
+
+<div id="vizMexS" class="fondoViz tamFull">
   <div class="rowCont">
-    <h1 class='header'>PAG7</h1>
-  </div>
+  <h1 class='header'>Visualización S Mex</h1>
+</div>
+  
+<div class="rowScroll">
+  <section id="scrollPag" class="scrollBoton">
+    <a href="#pagArrow" target="_top"><span></span><span></span><span></span>Arrow</a>
+  </section>
+</div>
+</div>
+
+
+<div id="pagArrow" class="fondoViz tamFull">
+  <div class="rowBoton"></div>
+  <div class="rowContBoton">
+      <div class="pruebaGraf">
+      <div class="grafico"></div>
+    </div>
     
+    <div class="pruebaGraf2">
+      <div class="infoGrafico">
+        <div class="imagDispGrafico"></div>
+        <div class="textDispGrafico">
+          <p id="TC1">1</p>
+          <p id="TC2">2</p>
+          <p id="TC3">3</p>
+          <p id="TC4">4</p>
+          <p id="TC5">5</p>
+          <p id="TC6">6</p>
+          <p id="TC7">7</p>
+        </div>
+    </div>
+    </div>
+    
+  </div>
   <div class="rowScroll">
     <section id="scrollPag" class="scrollBoton">
-      <a href="#PAG8" target="_top"><span></span><span></span><span></span>PAG8</a>
+      <a href="#pagHallazgos" target="_top"><span></span><span></span><span></span>Hallazgos</a>
+    </section>
+  </div>
+  </div>
+  
+<!-- Fondo animado scroll inf -->
+  
+<div id="pagHallazgos" class="trama tamFull">
+  <div class="rowHeader"></div>
+  <div class="rowContBoton tresColumnas">
+    <div class="col">Column 1</div>
+    <div class="col">Column 2</div>
+    <div class="col">Column 3</div>
+  </div>
+  
+  <div class="rowScroll">
+    <section id="scrollPag" class="scrollBoton">
+      <a href="#pagComparativos" target="_top"><span></span><span></span><span></span>Comparativos</a>
     </section>
   </div>
 </div>
 
-<div id="PAG8" class="gradiente tamFull">
+
+<div id="pagComparativos" class="gradiente tamFull">
 
   <div class="rowCont">
-    <h1 class='header'>PAG8</h1>
+    <h1 class='header'>Comparativos</h1>
   </div>
     
   <div class="rowScroll">

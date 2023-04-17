@@ -75,12 +75,12 @@
   }
   
   .menu li a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
   }
   
   .menu li:hover a {
-    color: #fff;
+    color: #7E8DBC;
   }
   
   .menu li.active a {

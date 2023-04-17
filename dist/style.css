@@ -40,21 +40,9 @@ h1{
 
 .col {
   flex:1;
-  background-color: #ddd;
+  background-color: rgba(126, 141, 188, 0.2);
   padding: 10px;
   text-align: center;
-}
-
-.column {
-  flex: 50%;
-  padding: 10px;
-}
-
-.column2 {
-  position: relative;
-  flex: 50%;
-  padding: 10px;
-  bottom: 0;
 }
 
 .containerEnmedio{
@@ -220,8 +208,4 @@ justify-content: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   margin: 0 5%;;
-}
-
-.vacio {
-  flex: 1;
 }
