@@ -64,7 +64,7 @@
   
   .tituloTabla{
     position: relative;
-    color: whitesmoke;
+    color: transparent;
     font-size: 40px;
     margin: auto;
     display: flex;

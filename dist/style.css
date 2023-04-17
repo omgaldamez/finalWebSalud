@@ -38,7 +38,6 @@ h1{
 	clear: both;
 }
 
-
 .col {
   flex:1;
   background-color: #ddd;
@@ -60,11 +59,11 @@ h1{
 
 .containerEnmedio{
   position: absolute;
-  top: 50%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20vw;
-  height: 20vh;
+  width: 29vw;
+  height: 35vh;
   border: 1px solid antiquewhite;
 }
 
@@ -222,6 +221,16 @@ justify-content: center;
   padding: 0;
   height: 100vh;
   width: 100vw;
+}
+
+.textContainerEnmedio{
+  font-family: 'Rubik', sans-serif;
+  font-size: 32px;
+  font-style: italic;
+  text-align: center;
+  color:whitesmoke;
+  height: 33.33%;
+  display: flex;
 }
 
 .textoHeader{
