@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
 
 #scrollPag a {
-  position: absolute;
+  position: relative;
     padding-top: 80px;
     bottom:0;
   }
@@ -11,16 +11,14 @@
   .scrollBoton a {
     position: relative;
     bottom: 20px;
-    left: 50%;
     z-index: 2;
     display: inline-block;
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
     color: #fff;
     font : normal 400 20px/1 'Josefin Sans', sans-serif;
     letter-spacing: .1em;
     text-decoration: none;
     transition: opacity .3s;
+    margin: auto;
   }
   .scrollBoton a:hover {
     opacity: .5;

@@ -38,6 +38,14 @@ h1{
 	clear: both;
 }
 
+
+.col {
+  flex:1;
+  background-color: #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
 .column {
   flex: 50%;
   padding: 10px;
@@ -48,6 +56,25 @@ h1{
   flex: 50%;
   padding: 10px;
   bottom: 0;
+}
+
+.containerEnmedio{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20vw;
+  height: 20vh;
+  border: 1px solid antiquewhite;
+}
+
+.flexContainerEnmedio{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 200vh;
+  width: 100vw;
 }
 
 .fondoViz{
@@ -114,6 +141,10 @@ h1{
   max-height: 100%;
 }
 
+.middle{
+  height: 70%;
+}
+
 .pruebaGraf{
   padding: 0;
   width: 50vw;
@@ -143,7 +174,7 @@ justify-content: center;
 
 .rowCont {
   display: flex;
-  height: 80vh;
+  height: 90vh;
 }
 
 .rowContSinScroll {
@@ -153,7 +184,7 @@ justify-content: center;
 
 .rowContBoton {
   display: flex;
-  height: 70vh;
+  height: 80vh;
 }
 
 .rowHeader {
@@ -163,7 +194,8 @@ justify-content: center;
 
 .rowScroll {
   display: flex;
-  height: 20vh;
+  height: 10vh;
+  justify-content: center;
 }
 
 .subtitulo{
@@ -176,10 +208,38 @@ justify-content: center;
   height: 20vh;
 }
 
+.tamDoble{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200vh;
+  width: 100vw;
+}
+
 .tamFull{
   position: relative;
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
+}
+
+.textoHeader{
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: auto;
+  height: 80vh;
+  max-height: 80vh;
+}
+
+.tresColumnas{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin: 0 5%;;
+}
+
+.vacio {
+  flex: 1;
 }

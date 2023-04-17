@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./fondoCarr.css">
   <link rel="stylesheet" href="styles/scrollbar.css">
   <link rel="stylesheet" href="styles/gradiente.css">
+  <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/grafico.css">
   <link rel="stylesheet" href="styles/fTrama.css">
   <link rel="stylesheet" href="styles/tabla.css">
@@ -17,40 +18,54 @@
 <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-</head>
 <body>
+  
+  <div class="menu-container">
+    <button class="menu-button">
+      <span class="menu-icon"></span>
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="#landing" target="_top">Home</a></li>
+        <li><a href="#defIndicadores">Indicadores de Salud</a></li>
+        <li><a href="#">Menu Item 3</a></li>
+      </ul>
+    </nav>
+  </div>
+  
 <!-- Landing animado 2 imagenes -->
 <main>
   <div id="landing" class="tamFull">
   <div class="background"></div>
   <div class="foreground"></div>
     <div class="textoHeader rowCont">
-    <h1 class='header'>Indicadores de Salud: Centralizacion del Sistema de Salud Público</h1>
+    <h1 class='header'>Indicadores de Salud del Sector Público de México: Comparativo entre Cuatro Sexenios</h1>
   </div>
   <div class="rowScroll">
     <section id="scrollPag" class="scrollBoton">
-      <a href="#PAG2" target="_top"><span></span><span></span><span></span>Comenzar</a>
+      <a href="#defIndicadores" target="_top"><span></span><span></span><span></span>Comenzar</a>
     </section>
   </div>
   <div class="clearer"></div>
   
   </div>
 </div>
-  
-<div id="PAG2" class="gradiente tamFull">
-  <div class="rowCont">
-  <h1 class='header'>PAG2</h1>
-  </div>
-  
-  <div class="rowScroll">
-  <section id="scrollPag" class="scrollBoton">
-    <a href="#PAG3" target="_top"><span></span><span></span><span></span>PAG 3</a>
-  </section>
-  </div>
+  <div id="defIndicadores" class="tamDoble gradienteDoblePag">
+    <div class="flexContainerEnmedio">
+  <div class="containerEnmedio"></div>
 </div>
+<div id="PAG2" class="tamFull">
+  <div class="rowBoton">
+  </div>
+  <div class="rowCont tresColumnas">
+    <div class="col">Column 1</div>
+    <div class="col middle">Column 2</div>
+    <div class="col">Column 3</div>
+  </div>
+  
 </div>
 
-<div id="PAG3" class="gradiente2 tamFull">
+<div id="PAG3" class="tamFull">
   <div class="rowHeader">
     <p class="tituloTabla">Indicadores de salud</p>
   </div>
@@ -101,7 +116,7 @@
     </table>
 </div>
 </div>
-
+</div>
 
 <div id="PAG4" class="trama tamFull">
   <div class="rowCont">
@@ -194,6 +209,7 @@
   <script  src="js/scrolljs.js"></script>
   <script src="js/GRAF.js"></script>
   <script  src="js/script.js"></script>
+  <script  src="js/menu.js"></script>
   
 </body>
 </html>
