@@ -1,3 +1,8 @@
+.graficoMexS{
+    margin:0 5%;
+    overflow-x: auto;
+}
+
 /* Style the left button container */
 .left-buttons {
     display: flex;

@@ -77,6 +77,8 @@
   .menu li a {
     color: #fff;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-style: bold;
   }
   
   .menu li:hover a {

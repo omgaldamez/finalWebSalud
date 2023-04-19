@@ -21,7 +21,7 @@ h1{
 }
 
 .background {
-  background-image: url(VH.jpg);
+  background-image: url(../VH.jpg);
   opacity: 100%;
   position: absolute;
   top: 0;
@@ -90,7 +90,7 @@ h1{
 .dosRow{
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 10%;
 }
 
 .flexContainerEnmedio{
@@ -107,7 +107,7 @@ h1{
 }
 
 .foreground {
-  background-image: url(HRAEPY.jpg);
+  background-image: url(../HRAEPY.jpg);
   opacity: 100%;
   mask-image: linear-gradient(var(--direction), black 40%, rgba(0, 0, 0, 0) 60%);
   mask-position: 50% 50%;
