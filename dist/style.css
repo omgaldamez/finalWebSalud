@@ -101,7 +101,7 @@ h1{
 }
 
 .fondoViz{
-  background-color: #152A44;
+  background-color: #0B2A46;
 }
 
 .foreground {
@@ -164,6 +164,7 @@ h1{
 .rowBoton {
   display: flex;
   height: 10vh;
+  padding-top: 5vh;
 }
 
 .rowCont {

@@ -7,6 +7,14 @@
   top:0;
 }
 
+.graficoMexS {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  top:0;
+}
+
 .grafico2 {
   display: flex;
   justify-content: center;
