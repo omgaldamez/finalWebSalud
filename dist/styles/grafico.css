@@ -15,17 +15,10 @@
   top:0;
 }
 
-.pruebaGraf2{
-  padding: 0;
-  width: 50vw;
-  margin: 0;
-position: relative;
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-justify-content: center;
-}
-
 .textDispGrafico p{
   color:whitesmoke;
+}
+
+#Estados text{
+  cursor: pointer;
 }

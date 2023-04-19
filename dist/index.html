@@ -33,10 +33,11 @@
         <li><a href="#pagTablaIndicadores" target="_top">Tabla Indicadores</a></li>
         
         <li><a href="#latamIndicadores" target="_top">Indicadores LATAM</a></li>
-        <li><a href="#sankeyHospitales" target="_top">Sankey Hospitales</a></li>
-        <li><a href="#mapaMex" target="_top">Mapa Interactivo</a></li>
-      
         <li><a href="#vizMexS" target="_top">Visualización S Mex</a></li>
+        
+        <li><a href="#mapaMex" target="_top">Mapa Interactivo</a></li>
+        <li><a href="#sankeyHospitales" target="_top">Sankey Hospitales</a></li>
+      
         <li><a href="#pagArrow" target="_top">Comparativo Sexenios</a></li>
         <li><a href="#pagHallazgos" target="_top">Hallazgos</a></li>
         <li><a href="#pagComparativos" target="_top">Comparativos</a></li>
@@ -50,9 +51,11 @@
   <div id="landing" class="tamFull">
   <div class="background"></div>
   <div class="foreground"></div>
-    <div class="textoHeader rowCont">
-    <h1 class='header'>Indicadores de Salud del Sector Público de México: Comparativo entre Cuatro Sexenios</h1>
+    <div class="rowCont">
+      <div class="containerTitulo">
+    Indicadores de Salud del Sector Público de México: Comparativo entre Cuatro Sexenios
   </div>
+</div>
   <div class="rowScroll">
     <section id="scrollPag" class="scrollBoton">
       <a href="#defIndicadores" target="_top"><span></span><span></span><span></span>Comenzar</a>
@@ -138,7 +141,9 @@
 
 <div id="latamIndicadores" class="trama tamFull">
   <div class="rowCont">
-  <h1 class='header'>Gráfica indicadores LATAM</h1>
+    <div class="containerTitulo">
+      Gráfica indicadores LATAM
+    </div>
 </div>
   
 <div class="rowScroll">
@@ -150,7 +155,9 @@
 
 <div id="sankeyHospitales" class="trama2 tamFull">
   <div class="rowCont">
-  <h1 class='header'>Sankey Hospitales</h1>
+    <div class="containerTitulo">
+      Sankey Hospitales
+    </div>
 </div>
   
 <div class="rowScroll">
@@ -160,10 +167,11 @@
 </div>
 </div>
 
-
-<div id="mapaMex" class="trama2 tamFull">
+<div id="mapaMex" class="fondoViz tamFull">
   <div class="rowCont">
-  <h1 class='header'>Mapa Interactivo Mex</h1>
+    <div class="containerTitulo">
+      Mapa Interactivo Mex
+    </div>
 </div>
   
 <div class="rowScroll">
@@ -173,11 +181,11 @@
 </div>
 </div>
 
-
 <div id="mapaTresMex" class="gradiente2 tamFull">
   <div class="rowCont">
-  <h1 class='header'>Comparación Mapas Interactivo Mex (opcional)</h1>
-</div>
+    <div class="containerTitulo">Comparación Mapas Interactivo Mex (opcional)
+    </div>
+  </div>
   
 <div class="rowScroll">
   <section id="scrollPag" class="scrollBoton">
@@ -186,30 +194,24 @@
 </div>
 </div>
 
-
 <div id="vizMexS" class="fondoViz tamFull">
-  <div class="rowCont">
-  <h1 class='header'>Visualización S Mex</h1>
-</div>
   
-<div class="rowScroll">
-  <section id="scrollPag" class="scrollBoton">
-    <a href="#pagArrow" target="_top"><span></span><span></span><span></span>Arrow</a>
-  </section>
+  <div class="rowCont">
+    <div class="containerTitulo">vizMexS
+    </div>
+  </div>
+  
 </div>
-</div>
-
 
 <div id="pagArrow" class="fondoViz tamFull">
   <div class="rowBoton"></div>
-  <div class="rowContBoton">
-      <div class="pruebaGraf">
+  <div class="rowContBoton dosColumnas">
+      <div class="col">
       <div class="grafico"></div>
     </div>
     
-    <div class="pruebaGraf2">
-      <div class="infoGrafico">
-        <div class="imagDispGrafico"></div>
+    <div class="col dosRow">
+      <div class="row">
         <div class="textDispGrafico">
           <p id="TC1">1</p>
           <p id="TC2">2</p>
@@ -220,6 +222,18 @@
           <p id="TC7">7</p>
         </div>
     </div>
+    
+    <div class="row">
+      <div class="textDispGrafico">
+        <p id="TC1">1</p>
+        <p id="TC2">2</p>
+        <p id="TC3">3</p>
+        <p id="TC4">4</p>
+        <p id="TC5">5</p>
+        <p id="TC6">6</p>
+        <p id="TC7">7</p>
+      </div>
+  </div>
     </div>
     
   </div>

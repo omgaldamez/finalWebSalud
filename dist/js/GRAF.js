@@ -7,6 +7,7 @@ d3.json(endpoint_ArrowPIB).then((datosjson) => {
   let S3 = [];
   let S4 = [];
   let S1vsS2 = [];
+  let tituloArrow=[];
 
   let i = 0;
 
@@ -21,6 +22,7 @@ d3.json(endpoint_ArrowPIB).then((datosjson) => {
 
       d3.selectAll("#Estados text").on("click", function () {
         let estadoSeleccionado = this.innerHTML;
+        const match = searchSiblings(estadoSeleccionado, "ENTIDAD");
 
 
         function searchSiblings(searchString, columnName) {
@@ -31,17 +33,11 @@ d3.json(endpoint_ArrowPIB).then((datosjson) => {
           }
           return null;
         }
-const match = searchSiblings(estadoSeleccionado, "ENTIDAD");
-console.log("match: ",match); // prints {index: 0, ENTIDAD: "AGS", S1: "2.32%", S2: "2.79%", S3: "3.11%", S4: "2.93%", S1vsS2: "20%", S1vsS3:
-console.log("match index: ",match.S2); // prints {index: 0, ENTIDAD: "AGS", S1: "2.32%", S2: "2.79%", S3: "3.11%", S4: "2.93%", S1vsS2: "20%", S1vsS3:
+        console.log("match: ",match); // prints {index: 0, ENTIDAD: "AGS", S1: "2.32%", S2: "2.79%", S3: "3.11%", S4: "2.93%", S1vsS2: "20%", S1vsS3:
+        console.log("match index: ",match.S2); // prints {index: 0, ENTIDAD: "AGS", S1: "2.32%", S2: "2.79%", S3: "3.11%", S4: "2.93%", S1vsS2: "20%", S1vsS3:
 
 
-
-
-
-
-
-d3.select("#TC1").text("Estado: " + match.NOMBRE);
+        d3.select("#TC1").text("Estado: " + match.NOMBRE);
         d3.select("#TC2").text("index " + match.index);
         d3.select("#TC3").text("S1 " + match.S1);
         d3.select("#TC4").text("S2 " + match.S2);
@@ -50,26 +46,27 @@ d3.select("#TC1").text("Estado: " + match.NOMBRE);
 
       });
 
-      d3.selectAll("#chart text").on("mouseenter", function () {
-      d3.select("#TC5").text(this.innerHTML);
+      d3.selectAll("#header text").on("mouseenter", function () {
+      d3.select("#TC6").text("Sexenio Comparado: " + this.innerHTML);
     });
       //d3.select(this).attr("transform", "translate(0,-150)");
 
-      d3.selectAll("#chart").on("mouseenter", function () {
-        d3.select("#TC5").text(this.innerText);
-        //d3.select(this).attr("transform", "translate(0,-150)");
-    console.log("ENTRA texto");
-      });
 
-
-  d3.selectAll(".grafico text").on("mouseenter", function () {
-    d3.select(this).style("fill", "#FFFFFF");
+  //d3.selectAll(".grafico text").on("mouseenter", function () {
+    //d3.select(this).style("fill", "#FFFFFF");
     //d3.select(this).transition.duration(350).style("fill", "#FFFFFF");
-    console.log("ENTRA HOVER");
+    //console.log("ENTRA HOVER");
+  //});
+  
+
+
+  d3.selectAll("#Estados text")
+  .attr("data-Entidad", function() {
+    return this.innerHTML;
   });
   
-  d3.selectAll("#Estados text")
-  .attr("new-attr", function() {
+  d3.selectAll("#header text")
+  .attr("data-SexenioComparado", function() {
     return this.innerHTML;
   });
   
