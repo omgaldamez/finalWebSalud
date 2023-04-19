@@ -3,7 +3,6 @@
 
 #scrollPag a {
   position: relative;
-    padding-top: 80px;
     bottom:0;
   }
 
@@ -27,7 +26,7 @@
 
   #scrollPag a span {
     position: absolute;
-    top: 0;
+    top: 16px;
     left: 50%;
     width: 24px;
     height: 24px;
