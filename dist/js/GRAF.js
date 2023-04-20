@@ -64,17 +64,21 @@ d3.json(endpoint_ArrowPIB).then((datosjson) => {
   .attr("data-Entidad", function() {
     return this.innerHTML;
   });
-  
+
+
+
   d3.selectAll("#header text")
   .attr("data-SexenioComparado", function() {
     return this.innerHTML;
   });
   
 
+
+
 // Access values using dot notation
-console.log(Entidad); // Output: John Doe
-console.log(Entidad[0]); // Output: 30
-console.log(datosjson.data.Entidad); // Output: 30
+console.log(Entidad);
+console.log(Entidad[0]);
+console.log(datosjson.data.Entidad);
 console.log(datosjson);
 
 const siblings = datosjson.data.filter(row => row.ENTIDAD === 'AGS');
