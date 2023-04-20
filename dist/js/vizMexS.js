@@ -59,21 +59,7 @@ d3.select(".dropbtn").on("click", function () {
     d3.selectAll(".textoANIO tspan").style("fill", "#FFFFFF");
 
     //Asignar valores data- a HEATS SVG
-    for (let j = 1; j < OrdenPERC_Estado_long.length + 1; j++) {
-      for (let z = 1; z < 24; z++) {
-        let idtemp = "E" + j + "x" + z;
-        d3.select("#" + idtemp).attr("data-ESTADO", OrdenPERC_Estado[i]);
-        d3.select("#" + idtemp).attr("data-ANIO", OrdenPERC_ANIO[i]);
-        d3.select("#" + idtemp).attr("data-POSICION", OrdenPERC_Posicion[i]);
-        d3.select("#" + idtemp).attr("data-PIB", OrdenPERC_PIB[i]);
-        d3.select("#" + idtemp).attr("data-PERC", OrdenPERC_PERC[i]);
-        d3.select("#" + idtemp).attr("data-GPT", OrdenPERC_GPT[i]);
-
-
-        i++;
-      }
-    }
-
+ 
 
         d3.selectAll("#HEATS path").attr("data-x", function() {
             var d = d3.select(this).attr("d");
@@ -86,11 +72,26 @@ d3.select(".dropbtn").on("click", function () {
             return match ? match[2] : null;
         });
         
+        let parts = 32;
+
+        // Calculate the size of each part
+        let partSize = Math.ceil(OrdenPERC_PERC.length / parts);
         
-        for(let fillE =1; fillE<=8; fillE++){
-let recorrido=0;
+        // Use a for loop to reverse each part of the array
+        for (let i = 0; i < OrdenPERC_PERC.length; i += partSize) {
+          let part = OrdenPERC_PERC.slice(i, i + partSize);
+          part.reverse();
+          OrdenPERC_PERC.splice(i, partSize, ...part);
+        }
+        
+        // The array now contains the values with each part reversed
+        console.log(OrdenPERC_PERC);
+
+        console.log("ORDEN PERC REVERSE: ", OrdenPERC_PERC);
+        let recorrido=0;
+        for(let fillE =1; fillE<=32; fillE++){
         var pathSelector = "#E" + fillE + " path[data-y]";
-        const pathFilter1 = d3.selectAll(pathSelector).filter((d,i) => i <184);
+        const pathFilter1 = d3.selectAll(pathSelector).filter((d,i) => i <23);
         
         // Define an array to store the data-y values
         var dataYArray = [];
@@ -102,6 +103,15 @@ let recorrido=0;
           // Convert the string value to a number and push it to the array
           dataYArray.push(parseFloat(dataYValue));
           dataYArray = dataYArray.sort().reverse();
+
+          d3.select(this).attr("data-PERC", function(d,i){
+            var existingValue = d3.select(this).attr("data-y");
+
+            var newValue = OrdenPERC_PERC[recorrido];
+
+            return newValue;
+
+          });
 
           //Asignar colores HEATMAP
           let indicadorSel=d3.select(this).attr("data-PERC");
