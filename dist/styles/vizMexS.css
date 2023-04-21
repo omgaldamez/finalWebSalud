@@ -1,8 +1,4 @@
-.graficoMexS{
-    margin:0 5%;
-    overflow-x: auto;
-}
-  
+
   .left-buttons {
     display: flex;
   }
@@ -28,8 +24,8 @@
     display: block;
   }
   
-  .dropdown-content a:hover {background-color: #ddd;}
+  .dropdown-content a:hover {background-color: transparent;}
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn {background-color: #506CA6;}

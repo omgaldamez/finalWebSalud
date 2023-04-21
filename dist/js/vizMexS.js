@@ -23,7 +23,37 @@ d3.select(".dropbtn").on("click", function () {
       OrdenPERC_GPT.push(data.GPT.toFixed(2));
     });
 
+
+        //Reverse y Splice
     let OrdenPERC_Estado_long = [...new Set(OrdenPERC_Estado)];
+        let parts = 32;
+
+        // Calculate the size of each part
+        let partSize = Math.ceil(OrdenPERC_PERC.length / parts);
+        // Use a for loop to reverse each part of the array
+        for (i = 0; i < OrdenPERC_PERC.length; i += partSize) {
+          let partPERC = OrdenPERC_PERC.slice(i, i + partSize).reverse();
+          let partPIB = OrdenPERC_PIB.slice(i, i + partSize).reverse();
+          
+
+          let partGPT = OrdenPERC_GPT.slice(i, i + partSize).reverse();
+          let partEstado = OrdenPERC_Estado.slice(i, i + partSize).reverse();
+          let partAnio = OrdenPERC_ANIO.slice(i, i + partSize).reverse();
+          let partPosicion = OrdenPERC_Posicion.slice(i, i + partSize).reverse();
+
+          OrdenPERC_PERC.splice(i, partSize, ...partPERC);
+          OrdenPERC_PIB.splice(i, partSize, ...partPIB);
+          
+          OrdenPERC_GPT.splice(i, partSize, ...partGPT);
+          OrdenPERC_Estado.splice(i, partSize, ...partEstado);
+          OrdenPERC_ANIO.splice(i, partSize, ...partAnio);
+          OrdenPERC_Posicion.splice(i, partSize, ...partPosicion);
+        }
+
+        
+        
+        console.log("ORDEN PERC REVERSE: ", OrdenPERC_PERC);
+        console.log("ORDEN PIB REVERSE: ", OrdenPERC_PIB);
 
     d3.selectAll(".azules path").style("fill", "none");
     //asignar data-OrdenEstado y modificar texto Entidades SVG
@@ -72,45 +102,51 @@ d3.select(".dropbtn").on("click", function () {
             return match ? match[2] : null;
         });
         
-        let parts = 32;
-
-        // Calculate the size of each part
-        let partSize = Math.ceil(OrdenPERC_PERC.length / parts);
-        
-        // Use a for loop to reverse each part of the array
-        for (let i = 0; i < OrdenPERC_PERC.length; i += partSize) {
-          let part = OrdenPERC_PERC.slice(i, i + partSize);
-          part.reverse();
-          OrdenPERC_PERC.splice(i, partSize, ...part);
-        }
-        
-        // The array now contains the values with each part reversed
-        console.log(OrdenPERC_PERC);
-
-        console.log("ORDEN PERC REVERSE: ", OrdenPERC_PERC);
         let recorrido=0;
         for(let fillE =1; fillE<=32; fillE++){
         var pathSelector = "#E" + fillE + " path[data-y]";
         const pathFilter1 = d3.selectAll(pathSelector).filter((d,i) => i <23);
         
-        // Define an array to store the data-y values
         var dataYArray = [];
         
-        // Loop through each path element
         pathFilter1.each(function(d, i) {
-          // Get the data-y attribute value
           var dataYValue = d3.select(this).attr("data-y");
-          // Convert the string value to a number and push it to the array
           dataYArray.push(parseFloat(dataYValue));
           dataYArray = dataYArray.sort().reverse();
 
           d3.select(this).attr("data-PERC", function(d,i){
-            var existingValue = d3.select(this).attr("data-y");
+            var dataNuevos = OrdenPERC_PERC[recorrido];
+            return dataNuevos;
+          }).attr("data-PIB", function(d,i){
+            dataNuevos = OrdenPERC_PIB[recorrido];
+            return dataNuevos;
+        }).attr("data-GPT", function(d,i){
+            dataNuevos = OrdenPERC_GPT[recorrido];
+            return dataNuevos;
+        }).attr("data-ESTADO", function(d,i){
+            dataNuevos = OrdenPERC_Estado[recorrido];
+            return dataNuevos;
+        }).attr("data-ANIO", function(d,i){
+            dataNuevos = OrdenPERC_ANIO[recorrido];
+            return dataNuevos;
+        }).attr("data-POSICION", function(d,i){
+            dataNuevos = OrdenPERC_Posicion[recorrido];
+            return dataNuevos;
+        });
 
-            var newValue = OrdenPERC_PERC[recorrido];
+          d3.select(this).attr("data-PIB", function(d,i){
+            var dataPIB = OrdenPERC_PIB[recorrido];
+            return dataPIB;
+          });
 
-            return newValue;
+          d3.select(this).attr("data-PIB", function(d,i){
+            var dataPIB = OrdenPERC_PIB[recorrido];
+            return dataPIB;
+          });
 
+          d3.select(this).attr("data-PIB", function(d,i){
+            var dataPIB = OrdenPERC_PIB[recorrido];
+            return dataPIB;
           });
 
           //Asignar colores HEATMAP

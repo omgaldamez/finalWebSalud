@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/scrollbutton.css">
   <link rel="stylesheet" href="./fondoCarr.css">
   <link rel="stylesheet" href="styles/scrollbar.css">
+  <link rel="stylesheet" href="styles/boton.css">
   <link rel="stylesheet" href="styles/gradiente.css">
   <link rel="stylesheet" href="styles/menu.css">
   <link rel="stylesheet" href="styles/grafico.css">
@@ -150,12 +151,12 @@
   
 <div class="rowScroll">
   <section id="scrollPag" class="scrollBoton">
-    <a href="#sankeyHospitales" target="_top"><span></span>Sankey Hospitales</a>
+    <a href="#vizMexS" target="_top"><span></span>Graf S</a>
   </section>
 </div>
 </div>
 
-<div id="vizMexS" class="fondoViz tamFull">
+<div id="vizMexS" class="gradiente tamFull">
   <div class="rowBoton">
 
       <div class="left-buttons">
@@ -167,18 +168,13 @@
         <a href="#">mean GPT</a>
       </div>
     </div>
-        <button class="deployable-button" id="button2">Button 2</button>
-        <ul class="deployable-items">
-          <li>Item 4</li>
-          <li>Item 5</li>
-          <li>Item 6</li>
-        </ul>
-        <button class="deployable-button" id="button3">Button 3</button>
-        <ul class="deployable-items">
-          <li>Item 7</li>
-          <li>Item 8</li>
-          <li>Item 9</li>
-        </ul>
+    
+    <div class="dropdown">
+        <button class="dropbtn">PIB</button>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">GPT</button>
+      </div>
       </div>
       <div class="center-button">
         <button id="button4">Button 4</button>
@@ -197,7 +193,7 @@
   
 </div>
 
-<div id="mapaMex" class="fondoViz tamFull">
+<div id="mapaMex" class="gradiente3 tamFull">
   <div class="rowCont">
     <div class="containerTitulo">
       Mapa Interactivo Mex
@@ -219,7 +215,7 @@
   
 <div class="rowScroll">
   <section id="scrollPag" class="scrollBoton">
-    <a href="#vizMexS" target="_top"><span></span>Mex S</a>
+    <a href="#pagArrow" target="_top"><span></span>Arrow</a>
   </section>
 </div>
 </div>
@@ -231,7 +227,7 @@
       <div class="grafico"></div>
     </div>
     
-    <div class="col dosRow"style="overflow-x:auto;">
+    <div class="col dosRow"style="overflow-x:hidden;">
       <div class="row">
         <div class="textDispGrafico">
           <p id="TC1">1</p>
@@ -246,13 +242,6 @@
     
     <div class="row">
       <div class="textDispGrafico">
-        <p id="TC1">1</p>
-        <p id="TC2">2</p>
-        <p id="TC3">3</p>
-        <p id="TC4">4</p>
-        <p id="TC5">5</p>
-        <p id="TC6">6</p>
-        <p id="TC7">7</p>
       </div>
   </div>
     </div>

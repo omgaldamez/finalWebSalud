@@ -41,7 +41,8 @@ h1{
 .col {
   display: flex;
   flex:1;
-  background-color: rgba(126, 141, 188, 0.2);
+  /*background-color: rgba(126, 141, 188, 0.2);
+  */
   padding: 10px;
   text-align: center;
   align-items: center;
@@ -84,7 +85,8 @@ h1{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-  margin: 0 5%;;
+  margin: 0 5%;
+  overflow-x: hidden;
 }
 
 .dosRow{
@@ -139,6 +141,13 @@ h1{
   background-color: rgba(192, 192, 192, 0.8);
 }
 
+.hola {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 40px;
+  fill: whitesmoke;
+  z-index: 5;
+}
+
 .land{
   position: relative;
   display: flex;
@@ -174,6 +183,7 @@ h1{
 .rowCont {
   display: flex;
   height: 90vh;
+  justify-content: center;
 }
 
 .rowContSinScroll {

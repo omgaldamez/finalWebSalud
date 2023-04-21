@@ -49,23 +49,11 @@ d3.json(endpoint_ArrowPIB).then((datosjson) => {
       d3.selectAll("#header text").on("mouseenter", function () {
       d3.select("#TC6").text("Sexenio Comparado: " + this.innerHTML);
     });
-      //d3.select(this).attr("transform", "translate(0,-150)");
-
-
-  //d3.selectAll(".grafico text").on("mouseenter", function () {
-    //d3.select(this).style("fill", "#FFFFFF");
-    //d3.select(this).transition.duration(350).style("fill", "#FFFFFF");
-    //console.log("ENTRA HOVER");
-  //});
-  
-
-
+ 
   d3.selectAll("#Estados text")
   .attr("data-Entidad", function() {
     return this.innerHTML;
   });
-
-
 
   d3.selectAll("#header text")
   .attr("data-SexenioComparado", function() {
