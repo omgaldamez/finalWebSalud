@@ -141,13 +141,6 @@ h1{
   background-color: rgba(192, 192, 192, 0.8);
 }
 
-.hola {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 40px;
-  fill: whitesmoke;
-  z-index: 5;
-}
-
 .land{
   position: relative;
   display: flex;
