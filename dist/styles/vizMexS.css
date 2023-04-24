@@ -39,3 +39,11 @@
   .dropdown:hover .dropdown-content {display: block;}
   
   .dropdown:hover .dropbtn {background-color: #506CA6;}
+
+  #HEATS{
+    cursor: pointer;
+  }
+  
+  #AZUL{
+    cursor: pointer;
+  }

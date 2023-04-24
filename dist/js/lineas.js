@@ -11,7 +11,7 @@ d3.svg("svg/SVG_GASTOP.svg").then(function (datossvg) {
 });
 
 d3.svg("svg/SVG_GASTO.svg").then(function (datossvg) {
-  d3.selectAll("#AZUL path").style("fill", "none");
+  d3.select("#FondoTestS rect").style("fill", "none").style("stroke","none");
   d3.selectAll("#ANIO tspan").style("fill", "none");
   d3.selectAll("#ANIO text").style("fill", "none");
   d3.selectAll("#ANIO path").style("stroke", "none");
