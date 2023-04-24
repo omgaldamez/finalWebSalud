@@ -206,7 +206,6 @@ console.log("ENT: ", OrdenPERC_Estado_long);
     d3.selectAll("#HEATS path").on("mouseenter", function () {
       //d3.select(this).style("fill", "#FFFFFF");
       //d3.select(this).transition.duration(350).style("fill", "#FFFFFF");
-      let valorEstado = d3.select(this).attr("data-ESTADO");
       let valorEstadoPrint = d3.select(this).attr("data-ESTADOPRINT");
       let valoresANIO = d3.select(this).attr("data-ANIO");
       let valoresPOSICION = d3.select(this).attr("data-POSICION");
@@ -220,6 +219,22 @@ console.log("ENT: ", OrdenPERC_Estado_long);
       d3.select("#infoPIB").text(valoresPIB);
       d3.select("#infoPERCAPITA").text(valoresPERCAPITA);
       d3.select("#infoGPT").text(valoresGPT);
+
+
+      let parseOrden = parseInt(valoresPOSICION);
+      if(parseOrden<=16){
+        d3.selectAll("#CircDer text").text("");
+      d3.select("#infoESTADOizq").text(valorEstadoPrint);
+      d3.select("#infoANIOizq").text(valoresANIO);
+      d3.select("#infoPOSICIONizq").text(valoresPOSICION);
+      }
+      
+      if(parseOrden>16){
+        d3.selectAll("#CircIzq text").text("");
+        d3.select("#infoESTADOder").text(valorEstadoPrint);
+        d3.select("#infoANIOder").text(valoresANIO);
+        d3.select("#infoPOSICIONder").text(valoresPOSICION);
+        }
 
       
   d3.selectAll("#infoHover text").style("fill", "#FFFFFF");
