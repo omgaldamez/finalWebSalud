@@ -17,7 +17,6 @@ d3.svg("svg/SVG_GASTO.svg").then(function (datossvg) {
   d3.selectAll("#ANIO path").style("stroke", "none");
   d3.selectAll("#ENTIDAD tspan").style("fill", "none");
   d3.selectAll("#ENTIDAD text").style("fill", "none");
-  d3.selectAll("#NUM textPath").attr("startOffset", "40%");
   d3.selectAll("#NUM text").style("fill", "none");
   d3.selectAll("#infoHover text").style("fill", "none");
   d3.selectAll("#variables text").style("fill", "none");

@@ -1,77 +1,91 @@
 let endpointPERC = "datos/JSON_PERC.json";
+let endpointPIB = "datos/JSON_PIB.json";
+let endpointGPT = "datos/JSON_GPT.json";
 let endpointmeanPERC = "datos/JSON_meanPERC.json";
 //Se activa con boton Orden PERCAPITA
-d3.select(".dropbtn").on("click", function () {
-  d3.json(endpointPERC).then((datosjson) => {
-    let OrdenPERC_Estado = [];
-    let OrdenPERC_ANIO = [];
-    let OrdenPERC_Posicion = [];
-    let OrdenPERC_PERC = [];
-    let OrdenPERC_PIB = [];
-    let OrdenPERC_PIBmean = [];
-    let OrdenPERC_GPT = [];
-    let OrdenPERC_EstadoPrint = [];
+d3.selectAll(".dropbtn").on("click", function () {
+  let tempDrop = d3.select(this).attr("id");
+  if(tempDrop==="dropbtnPERC"){
+    var tempDropSelect = endpointPERC;
+  }
+  if(tempDrop==="dropbtnPIB"){
+    tempDropSelect = endpointPIB;
+  }
+  if(tempDrop==="dropbtnGPT"){
+    tempDropSelect = endpointGPT;
+  }
+  d3.json(tempDropSelect).then((datosjson) => {
+    console.log("ENDPOINT: ", tempDropSelect);
+    let DATAendpointEstado = [];
+    let DATAendpointANIO = [];
+    let DATAendpointPosicion = [];
+    let DATAendpointPERC = [];
+    let DATAendpointPIB = [];
+    let DATAendpointGPT = [];
+    let DATAendpointEstadoPrint = [];
     let i = 0;
 
     //push a Arrays
     datosjson.data.forEach(function (data) {
-      OrdenPERC_Estado.push(data.Estado);
-      OrdenPERC_ANIO.push(data.Anio);
-      OrdenPERC_Posicion.push(data.OrdenPERC);
-      OrdenPERC_PERC.push(data.PERCAPITA.toFixed(0));
-      OrdenPERC_PIB.push(data.PIB.toFixed(2));
-      OrdenPERC_PIBmean.push(data.PIBmean);
-      OrdenPERC_GPT.push(data.GPT.toFixed(2));
-      OrdenPERC_EstadoPrint.push(data.EstadoPrint);
+      DATAendpointEstado.push(data.Estado);
+      DATAendpointANIO.push(data.Anio);
+      if(tempDropSelect==endpointPERC){
+        DATAendpointPosicion.push(data.OrdenPERC);
+        console.log("ENTRA ORDENPERC");
+      }
+      if(tempDropSelect==endpointPIB){
+        DATAendpointPosicion.push(data.OrdenPIB);
+        console.log("ENTRA ORDENPIB");
+
+      }
+      if(tempDropSelect==endpointGPT){
+        DATAendpointPosicion.push(data.OrdenGPT);
+        console.log("ENTRA ORDENGPT");
+      }
+      DATAendpointPERC.push(data.PERCAPITA.toFixed(0));
+      DATAendpointPIB.push(data.PIB.toFixed(2));
+      DATAendpointGPT.push(data.GPT.toFixed(2));
+      DATAendpointEstadoPrint.push(data.EstadoPrint);
     });
 
-    
-        
-    console.log("ORDEN PRINT: ", OrdenPERC_Estado);
-
         //Reverse y Splice
-    let OrdenPERC_Estado_long = [...new Set(OrdenPERC_Estado)];
+    let DATAendpointEstado_long = [...new Set(DATAendpointEstado)];
         let parts = 32;
+        let partSize = Math.ceil(DATAendpointPERC.length / parts);
+        for (i = 0; i < DATAendpointPERC.length; i += partSize) {
+          let partPERC = DATAendpointPERC.slice(i, i + partSize).reverse();
+          let partPIB = DATAendpointPIB.slice(i, i + partSize).reverse();
+          let partGPT = DATAendpointGPT.slice(i, i + partSize).reverse();
+          let partEstado = DATAendpointEstado.slice(i, i + partSize).reverse();
+          let partAnio = DATAendpointANIO.slice(i, i + partSize).reverse();
+          let partPosicion = DATAendpointPosicion.slice(i, i + partSize).reverse();
+          let partEstado_Print = DATAendpointEstadoPrint.slice(i, i + partSize).reverse();
 
-        // Calculate the size of each part
-        let partSize = Math.ceil(OrdenPERC_PERC.length / parts);
-        // Use a for loop to reverse each part of the array
-        for (i = 0; i < OrdenPERC_PERC.length; i += partSize) {
-          let partPERC = OrdenPERC_PERC.slice(i, i + partSize).reverse();
-          let partPIB = OrdenPERC_PIB.slice(i, i + partSize).reverse();
-          let partGPT = OrdenPERC_GPT.slice(i, i + partSize).reverse();
-          let partEstado = OrdenPERC_Estado.slice(i, i + partSize).reverse();
-          let partAnio = OrdenPERC_ANIO.slice(i, i + partSize).reverse();
-          let partPosicion = OrdenPERC_Posicion.slice(i, i + partSize).reverse();
-          let partEstado_Print = OrdenPERC_EstadoPrint.slice(i, i + partSize).reverse();
-
-          OrdenPERC_PERC.splice(i, partSize, ...partPERC);
-          OrdenPERC_PIB.splice(i, partSize, ...partPIB);
-          OrdenPERC_EstadoPrint.splice(i, partSize, ...partEstado_Print);
-          OrdenPERC_GPT.splice(i, partSize, ...partGPT);
-          OrdenPERC_Estado.splice(i, partSize, ...partEstado);
-          OrdenPERC_ANIO.splice(i, partSize, ...partAnio);
-          OrdenPERC_Posicion.splice(i, partSize, ...partPosicion);
+          DATAendpointPERC.splice(i, partSize, ...partPERC);
+          DATAendpointPIB.splice(i, partSize, ...partPIB);
+          DATAendpointEstadoPrint.splice(i, partSize, ...partEstado_Print);
+          DATAendpointGPT.splice(i, partSize, ...partGPT);
+          DATAendpointEstado.splice(i, partSize, ...partEstado);
+          DATAendpointANIO.splice(i, partSize, ...partAnio);
+          DATAendpointPosicion.splice(i, partSize, ...partPosicion);
         }
 
         
-console.log("ENT: ", OrdenPERC_Estado_long);
     d3.selectAll("#AZUL path").style("fill", "none");
     //asignar data-OrdenEstado y modificar texto Entidades SVG
-    for (let j = 1; j < OrdenPERC_Estado_long.length + 1; j++) {
+    for (let j = 1; j < DATAendpointEstado_long.length + 1; j++) {
       let idtemp = "ENT" + j;
-      if (OrdenPERC_Estado_long[j - 1] === "EDOMEX") {
-        OrdenPERC_Estado_long[j - 1] = "MEX";
+      if (DATAendpointEstado_long[j - 1] === "EDOMEX") {
+        DATAendpointEstado_long[j - 1] = "MEX";
       }
       d3.select("#" + idtemp).attr(
         "data-OrdenEstado",
-        OrdenPERC_Estado_long[j - 1]
+        DATAendpointEstado_long[j - 1]
       );
 
       d3.select("#" + idtemp)
         .select("tspan")
-        .text(OrdenPERC_Estado_long[j - 1]);
-
+        .text(DATAendpointEstado_long[j - 1]);
     }
 
     //Prender textos
@@ -82,10 +96,7 @@ console.log("ENT: ", OrdenPERC_Estado_long);
     d3.selectAll("#ENTIDAD text").style("fill", "#FFFFFF");
     d3.selectAll("#NUM text").style("fill", "#FFFFFF");
 
-    
-
     //Asignar valores data- a HEATS SVG
- 
 
         d3.selectAll("#HEATS path").attr("data-x", function() {
             var d = d3.select(this).attr("d");
@@ -98,6 +109,9 @@ console.log("ENT: ", OrdenPERC_Estado_long);
             return match ? match[2] : null;
         });
         
+
+
+
         let recorrido=0;
         for(let fillE =1; fillE<=32; fillE++){
         var pathSelector = "#E" + fillE + " path[data-y]";
@@ -111,32 +125,42 @@ console.log("ENT: ", OrdenPERC_Estado_long);
           dataYArray = dataYArray.sort().reverse();
 
           d3.select(this).attr("data-PERC", function(d,i){
-            var dataNuevos = OrdenPERC_PERC[recorrido];
+            var dataNuevos = DATAendpointPERC[recorrido];
             return dataNuevos;
           }).attr("data-PIB", function(d,i){
-            dataNuevos = OrdenPERC_PIB[recorrido];
+            dataNuevos = DATAendpointPIB[recorrido];
             return dataNuevos;
         }).attr("data-GPT", function(d,i){
-            dataNuevos = OrdenPERC_GPT[recorrido];
+            dataNuevos = DATAendpointGPT[recorrido];
             return dataNuevos;
         }).attr("data-ESTADO", function(d,i){
-            dataNuevos = OrdenPERC_Estado[recorrido];
+            dataNuevos = DATAendpointEstado[recorrido];
             return dataNuevos;
         }).attr("data-ANIO", function(d,i){
-            dataNuevos = OrdenPERC_ANIO[recorrido];
+            dataNuevos = DATAendpointANIO[recorrido];
             return dataNuevos;
         }).attr("data-POSICION", function(d,i){
-            dataNuevos = OrdenPERC_Posicion[recorrido];
+            dataNuevos = DATAendpointPosicion[recorrido];
             return dataNuevos;
         }).attr("data-ESTADOPRINT", function(d,i){
-          dataNuevos = OrdenPERC_EstadoPrint[recorrido];
+          dataNuevos = DATAendpointEstadoPrint[recorrido];
           return dataNuevos;
       });
 
-
-let valMaxPERC = Math.max(...OrdenPERC_PERC);
+      
+  if(tempDrop==="dropbtnPERC"){
+    var valMaxPERC = Math.max(...DATAendpointPERC);
+    var indicadorSel=d3.select(this).attr("data-PERC");
+  }
+  if(tempDrop==="dropbtnPIB"){
+    valMaxPERC = Math.max(...DATAendpointPIB);
+    indicadorSel=d3.select(this).attr("data-PIB");
+  }
+  if(tempDrop==="dropbtnGPT"){
+    valMaxPERC = Math.max(...DATAendpointGPT);
+    indicadorSel=d3.select(this).attr("data-GPT");
+  }
           //Asignar colores HEATMAP
-          let indicadorSel=d3.select(this).attr("data-PERC");
         if (indicadorSel <= valMaxPERC*0.1) {
             d3.select(this)
               .transition()
@@ -232,19 +256,18 @@ let valMaxPERC = Math.max(...OrdenPERC_PERC);
         
         }
 
+        d3.selectAll(".PERCdrop").on("click", function () {
+          let azulSeleccionado
+          azulSeleccionado = d3.select(this).attr("id");
 
-        d3.select(".PERCdropPERC").on("click", function () {
           let valorEstado = d3.select("#E1x1").attr("data-ANIO");
           if (valorEstado > 0.1) {
-            d3.selectAll(".infoError text").style("fill", "none");
-            console.log("SI ENTRA IF BOTON");
             d3.json(endpointmeanPERC).then((datosjson) => {
               let meanPERC_PERC = [];
               let meanPERC_Estado = [];
               let meanPERC_PIB = [];
               let meanPERC_GPT = [];
               let i = 0;
-              console.log("SI ENTRA ENDPOINT");
     
               //push a Arrays
               datosjson.data.forEach(function (data) {
@@ -253,12 +276,22 @@ let valMaxPERC = Math.max(...OrdenPERC_PERC);
                 meanPERC_PIB.push(data.PIB.toFixed(2));
                 meanPERC_GPT.push(data.GPT.toFixed(2));
               });
-    
-              let meanPERC_Estado_long = [...new Set(meanPERC_Estado)];
-              console.log("MEANPERCLONG:", meanPERC_Estado_long);
               i = 0;
-              let valMaxmeanPERC = Math.max(...meanPERC_PERC);
-              //Asignar valores data- a HEATS SVG
+              
+          if(azulSeleccionado === "dropPERC"){
+            var valMaxmeanPERC = Math.max(...meanPERC_PERC);
+            var meanTemp = meanPERC_PERC;
+                      }
+                      if(azulSeleccionado === "dropPIB"){
+                        valMaxmeanPERC = Math.max(...meanPERC_PIB);
+                        meanTemp = meanPERC_PIB;
+                      }
+                      if(azulSeleccionado === "dropGPT"){
+                        valMaxmeanPERC = Math.max(...meanPERC_GPT);
+                        meanTemp = meanPERC_GPT;
+                      }
+
+              //Asignar valores data- a AZUL
               for (let j = 1; j < 33; j++) {
                 for (let z = 1; z < 5; z++) {
                   let idtemp = "A" + z + "x" + j;
@@ -266,84 +299,81 @@ let valMaxPERC = Math.max(...OrdenPERC_PERC);
                     "data-meanPercESTADO",
                     meanPERC_Estado[i]
                   );
-                  d3.select("#" + idtemp).attr("data-meanPercPIB", meanPERC_PIB[i]);
-                  d3.select("#" + idtemp).attr(
-                    "data-meanPercPERC",
-                    meanPERC_PERC[i]
-                  );
-                  d3.select("#" + idtemp).attr("data-meanPercGPT", meanPERC_GPT[i]);
-                  console.log("A", idtemp);
+                  d3.select("#" + idtemp).attr("data-meanPercPIB", meanPERC_PIB[i]).attr(
+                    "data-meanPercPERC",meanPERC_PERC[i]).attr("data-meanPercGPT", meanPERC_GPT[i]);
     
                   //Asignar colores A
-                  if (meanPERC_PERC[i] <= valMaxmeanPERC*0.1) {
+
+                  
+                  if (meanTemp[i] <= valMaxmeanPERC*0.1) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#edf5fc");
-                      d3.select("#ArangoDiez").text(Math.floor(valMaxmeanPERC*0.1));
+                      d3.select("#ArangoDiez").text((valMaxmeanPERC*0.1).toFixed(2));
                   }
-                  if (meanPERC_PERC[i] > valMaxmeanPERC*0.1 && meanPERC_PERC[i] <= valMaxmeanPERC*0.2) {
+                  if (meanTemp[i] > valMaxmeanPERC*0.1 && meanTemp[i] <= valMaxmeanPERC*0.2) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#d9e8f5");
-                      d3.select("#ArangoVeinte").text(Math.floor(valMaxmeanPERC*0.2));
+                      d3.select("#ArangoVeinte").text((valMaxmeanPERC*0.2).toFixed(2));
                   }
-                  if (meanPERC_PERC[i] > valMaxmeanPERC*0.2 && meanPERC_PERC[i] <= valMaxmeanPERC*0.3) {
+                  if (meanTemp[i] > valMaxmeanPERC*0.2 && meanTemp[i] <= valMaxmeanPERC*0.3) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#c3dbee");
-                      d3.select("#ArangoTreinta").text(Math.floor(valMaxmeanPERC*0.3));
+                      d3.select("#ArangoTreinta").text((valMaxmeanPERC*0.3).toFixed(2));
                   }
-                  if (meanPERC_PERC[i] > valMaxmeanPERC*0.3 && meanPERC_PERC[i] <= valMaxmeanPERC*0.4) {
+                  if (meanTemp[i] > valMaxmeanPERC*0.3 && meanTemp[i] <= valMaxmeanPERC*0.4) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#a5cce4");
-                      d3.select("#ArangoCuarenta").text(Math.floor(valMaxmeanPERC*0.4));
+                      d3.select("#ArangoCuarenta").text((valMaxmeanPERC*0.4).toFixed(2));
                   }
-                  if (meanPERC_PERC[i] > valMaxmeanPERC*0.4 && meanPERC_PERC[i] <= valMaxmeanPERC*0.5) {
+                  if (meanTemp[i] > valMaxmeanPERC*0.4 && meanTemp[i] <= valMaxmeanPERC*0.5) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#80b9da");
-                      d3.select("#ArangoCincuenta").text(Math.floor(valMaxmeanPERC*0.5));
+                      d3.select("#ArangoCincuenta").text((valMaxmeanPERC*0.5).toFixed(2));
                   }
-                  if (meanPERC_PERC[i] > valMaxmeanPERC*0.5 && meanPERC_PERC[i] <= valMaxmeanPERC*0.6) {
+                  if (meanTemp[i] > valMaxmeanPERC*0.5 && meanTemp[i] <= valMaxmeanPERC*0.6) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#5ba3cf");
-                      d3.select("#ArangoSesenta").text(Math.floor(valMaxmeanPERC*0.6));
+                      d3.select("#ArangoSesenta").text((valMaxmeanPERC*0.6).toFixed(2));
                   }
-                  if (meanPERC_PERC[i] > valMaxmeanPERC*0.6 && meanPERC_PERC[i] <= valMaxmeanPERC*0.7) {
+                  if (meanTemp[i] > valMaxmeanPERC*0.6 && meanTemp[i] <= valMaxmeanPERC*0.7) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#3c8bc3");
-                      d3.select("#ArangoSetenta").text(Math.floor(valMaxmeanPERC*0.7));
+                      d3.select("#ArangoSetenta").text((valMaxmeanPERC*0.7).toFixed(2));
                   }
-                  if (meanPERC_PERC[i] > valMaxmeanPERC*0.7 && meanPERC_PERC[i] <= valMaxmeanPERC*0.8) {
+                  if (meanTemp[i] > valMaxmeanPERC*0.7 && meanTemp[i] <= valMaxmeanPERC*0.8) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#2271b4");
-                      d3.select("#ArangoOchenta").text(Math.floor(valMaxmeanPERC*0.8));
+                      d3.select("#ArangoOchenta").text((valMaxmeanPERC*0.8).toFixed(2));
                   }
-                  if (meanPERC_PERC[i] > valMaxmeanPERC*0.8 && meanPERC_PERC[i] <= valMaxmeanPERC*0.9) {
+                  if (meanTemp[i] > valMaxmeanPERC*0.8 && meanTemp[i] <= valMaxmeanPERC*0.9) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#0f579f");
-                      d3.select("#ArangoNoventa").text(Math.floor(valMaxmeanPERC*0.9));
+                      d3.select("#ArangoNoventa").text((valMaxmeanPERC*0.9).toFixed(2));
                   }
-                  if (meanPERC_PERC[i] > valMaxmeanPERC*0.9) {
+                  if (meanTemp[i] > valMaxmeanPERC*0.9) {
                     d3.select("#" + idtemp)
                       .transition()
                       .duration(1500)
                       .style("fill", "#083d7e");
-                      d3.select("#ArangoCien").text(Math.floor(valMaxmeanPERC));
+                      d3.select("#ArangoCien").text((valMaxmeanPERC).toFixed(2));
                   }
                   i++;
                 }
@@ -352,164 +382,6 @@ let valMaxPERC = Math.max(...OrdenPERC_PERC);
           }
         });
     
-        d3.select(".PERCdropPIB").on("click", function () {
-          let valorEstado = d3.select("#E1x1").attr("data-ANIO");
-          if (valorEstado > 0.1) {
-            d3.selectAll(".infoError text").style("fill", "none");
-            console.log("SI ENTRA IF BOTON");
-            d3.json(endpointmeanPERC).then((datosjson) => {
-              let meanPERC_PERC = [];
-              let meanPERC_Estado = [];
-              let meanPERC_PIB = [];
-              let meanPERC_GPT = [];
-              let i = 0;
-              console.log("SI ENTRA ENDPOINT");
-    
-              //push a Arrays
-              datosjson.data.forEach(function (data) {
-                meanPERC_Estado.push(data.ESTADO);
-                meanPERC_PERC.push(data.PERCAPITA_mean.toFixed(2));
-                meanPERC_PIB.push(data.PIB.toFixed(2));
-                meanPERC_GPT.push(data.GPT.toFixed(2));
-              });
-    
-              let meanPERC_Estado_long = [...new Set(meanPERC_Estado)];
-              console.log("MEANPERCLONG:", meanPERC_Estado_long);
-              i = 0;
-              //Asignar valores data- a HEATS SVG
-              for (let j = 1; j < 33; j++) {
-                for (let z = 1; z < 5; z++) {
-                  let idtemp = "A" + z + "x" + j;
-                  d3.select("#" + idtemp).attr(
-                    "data-meanPercESTADO",
-                    meanPERC_Estado[i]
-                  );
-                  d3.select("#" + idtemp).attr("data-meanPercPIB", meanPERC_PIB[i]);
-                  d3.select("#" + idtemp).attr(
-                    "data-meanPercPERC",
-                    meanPERC_PERC[i]
-                  );
-                  d3.select("#" + idtemp).attr("data-meanPercGPT", meanPERC_GPT[i]);
-                  console.log("A", idtemp);
-    
-                  //Asignar colores A
-                  if (meanPERC_PIB[i] <= 0.5) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#e3eef9");
-                  }
-                  if (meanPERC_PIB[i] > 0.5 && meanPERC_PIB[i] <= 1) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#bdd9eb");
-                  }
-                  if (meanPERC_PIB[i] > 1 && meanPERC_PIB[i] <= 2.5) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#6daed5");
-                  }
-                  if (meanPERC_PIB[i] > 2.5 && meanPERC_PIB[i] <= 3) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#2f7ebc");
-                  }
-                  if (meanPERC_PIB[i] > 3 && meanPERC_PIB[i] <= 10) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#0a4a90");
-                  }
-                  i++;
-                }
-              }
-            });
-          }
-        });
-        //querySlector JS
-    
-        d3.select(".PERCdropGPT").on("click", function () {
-          let valorEstado = d3.select("#E1x1").attr("data-ANIO");
-          if (valorEstado > 0.1) {
-            d3.selectAll(".infoError text").style("fill", "none");
-            console.log("SI ENTRA IF BOTON");
-            d3.json(endpointmeanPERC).then((datosjson) => {
-              let meanPERC_PERC = [];
-              let meanPERC_Estado = [];
-              let meanPERC_PIB = [];
-              let meanPERC_GPT = [];
-              let i = 0;
-              console.log("SI ENTRA ENDPOINT");
-    
-              //push a Arrays
-              datosjson.data.forEach(function (data) {
-                meanPERC_Estado.push(data.ESTADO);
-                meanPERC_PERC.push(data.PERCAPITA_mean.toFixed(2));
-                meanPERC_PIB.push(data.PIB.toFixed(2));
-                meanPERC_GPT.push(data.GPT.toFixed(2));
-              });
-    
-              let meanPERC_Estado_long = [...new Set(meanPERC_Estado)];
-              console.log("MEANPERCLONG:", meanPERC_Estado_long);
-              i = 0;
-              //Asignar valores data- a HEATS SVG
-              for (let j = 1; j < 33; j++) {
-                for (let z = 1; z < 5; z++) {
-                  let idtemp = "A" + z + "x" + j;
-                  d3.select("#" + idtemp).attr(
-                    "data-meanPercESTADO",
-                    meanPERC_Estado[i]
-                  );
-                  d3.select("#" + idtemp).attr("data-meanPercPIB", meanPERC_PIB[i]);
-                  d3.select("#" + idtemp).attr(
-                    "data-meanPercPERC",
-                    meanPERC_PERC[i]
-                  );
-                  d3.select("#" + idtemp).attr("data-meanPercGPT", meanPERC_GPT[i]);
-                  console.log("A", idtemp);
-    
-                  //Asignar colores A
-                  if (meanPERC_GPT[i] <= 10) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#e3eef9");
-                  }
-                  if (meanPERC_GPT[i] > 10 && meanPERC_GPT[i] <= 15) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#bdd9eb");
-                  }
-                  if (meanPERC_GPT[i] > 15 && meanPERC_GPT[i] <= 20) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#6daed5");
-                  }
-                  if (meanPERC_GPT[i] > 20 && meanPERC_GPT[i] <= 28) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#2f7ebc");
-                  }
-                  if (meanPERC_GPT[i] > 28 && meanPERC_GPT[i] <= 100) {
-                    d3.select("#" + idtemp)
-                      .transition()
-                      .duration(1500)
-                      .style("fill", "#0a4a90");
-                  }
-                  i++;
-                }
-              }
-            });
-          }
-        });
-    
-
     let matColor = [];
 
 
