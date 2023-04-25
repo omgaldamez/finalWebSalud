@@ -251,6 +251,7 @@ d3.selectAll(".dropbtn").on("click", function () {
               d3.select("#rangoCien").text(Math.floor(valMaxPERC));
               d3.select(this).attr("data-Leyenda", "H100");
           }
+          
           recorrido++;
         });
         
@@ -385,6 +386,8 @@ d3.selectAll(".dropbtn").on("click", function () {
     let matColor = [];
 
 
+    var estransicion = {};
+
     //print datos- en SVG con d3
     d3.selectAll("#HEATS path").on("mouseenter", function () {
       //d3.select(this).style("fill", "#FFFFFF");
@@ -404,6 +407,14 @@ d3.selectAll(".dropbtn").on("click", function () {
       d3.select("#infoPERCAPITA").text(valoresPERCAPITA);
       d3.select("#infoGPT").text(valoresGPT);
 
+    //d3.select(this).transition().duration(1000).attr("transform", "scale(1.1)");
+    //d3.select(this).transition().duration(1000).attr("transform", "translate(50,50) scale(0.9)");
+
+
+
+        //d3.select(this).transition().duration(1000).attr("transform","matrix(0,1,1,0,0,0)");
+
+
       let parseOrden = parseInt(valoresPOSICION);
       if(parseOrden<=16){
         d3.selectAll("#CircDer text").text("");
@@ -412,6 +423,23 @@ d3.selectAll(".dropbtn").on("click", function () {
       d3.select("#infoPOSICIONizq").text(valoresPOSICION); 
       if (valorEstado === "EDOMEX") {
         valorEstado = "MEX";
+      }
+      
+      if(!estransicion[this.id]){
+        estransicion[this.id] = true;
+      
+      d3.select(this)
+      .raise()
+      .transition()
+      .duration(1000)
+      .attr("transform", "scale(1.1)")
+      .style("stroke", "#000000")
+      .style("stroke-width",5)
+      .transition()
+      .duration(1000)
+      .attr("transform", "scale(1)")
+      .style("stroke", "rgb(141,140,140)")
+      .style("stroke-width",1.1042);
       }
       }
       
@@ -423,8 +451,17 @@ d3.selectAll(".dropbtn").on("click", function () {
         if (valorEstado === "EDOMEX") {
           valorEstado = "MEX";
         }
+        d3.select(this)
+        .raise()
+        .transition()
+        .duration(1000)
+        .attr("transform", "skewX(2) skewY(1)")
+        .transition()
+        .duration(1000)
+        .attr("transform", "skewX(0) skewY(0)");
         }
-      
+
+
         let leyendaHover = d3.select(this).attr("data-Leyenda");
         d3.select("#"+leyendaHover).style("stroke","#89BF4D").style("stroke-width",8).raise();
   
@@ -441,7 +478,14 @@ d3.selectAll(".dropbtn").on("click", function () {
     });
 
 
+
+    //d3.selectAll("#HEATS path").on("mouseleave", function () {
  
+      //d3.select(this).transition().duration(1000).attr("transform", "scale(1)");
+    //});
   
+
+
   });
 });
+
