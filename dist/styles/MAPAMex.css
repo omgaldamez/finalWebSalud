@@ -1,0 +1,43 @@
+
+.graficoMAPA {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 90vh;
+    top:0;
+    margin:auto;
+    overflow-x: auto;
+  }
+  
+    .left-buttons {
+      display: flex;
+    }
+    
+  .MAPAdropdown { 
+      position: relative;
+      display: inline-block;
+    }
+  
+    .MAPAdropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      cursor: pointer;
+    }
+    
+    .MAPAdropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .MAPAdropdown-content a:hover {background-color: transparent;}
+    
+    .MAPAdropdown:hover .MAPAdropdown-content {display: block;}
+    
+    .MAPAdropdown:hover .MAPAdropbtn {background-color: #506CA6;}
+  

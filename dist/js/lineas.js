@@ -2,11 +2,14 @@ d3.svg("svg/Arrow_S1vsS2.svg").then(function (datossvg) {
   d3.select(".grafico").node().append(datossvg.documentElement);
 });
 
-d3.svg("svg/SVG_GASTOP.svg").then(function (datossvg) {
-  d3.select(".graficoMexS").node().append(datossvg.documentElement);
+d3.svg("svg/MEX.svg").then(function (datossvg) {
+  d3.select(".graficoMAPA").node().append(datossvg.documentElement);
+  d3.select(".graficoMAPA rect").style("stroke","none");
 });
 
 d3.svg("svg/SVG_GASTOP.svg").then(function (datossvg) {
+  d3.select(".graficoMexS").node().append(datossvg.documentElement);
+  
   d3.selectAll("#FondoTestS rect").style("fill", "none").style("stroke","none");
   d3.selectAll("#ANIO tspan").style("fill", "none");
   d3.selectAll("#ANIO text").style("fill", "none");
@@ -27,10 +30,5 @@ d3.svg("svg/SVG_GASTOP.svg").then(function (datossvg) {
     var match = /M([\d.]+),([\d.]+)/.exec(d);
     return match ? match[2] : null;
   });
-
-
-
-
-  
 });
 

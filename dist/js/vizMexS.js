@@ -32,16 +32,13 @@ d3.selectAll(".dropbtn").on("click", function () {
       DATAendpointANIO.push(data.Anio);
       if(tempDropSelect==endpointPERC){
         DATAendpointPosicion.push(data.OrdenPERC);
-        console.log("ENTRA ORDENPERC");
       }
       if(tempDropSelect==endpointPIB){
         DATAendpointPosicion.push(data.OrdenPIB);
-        console.log("ENTRA ORDENPIB");
 
       }
       if(tempDropSelect==endpointGPT){
         DATAendpointPosicion.push(data.OrdenGPT);
-        console.log("ENTRA ORDENGPT");
       }
       DATAendpointPERC.push(data.PERCAPITA.toFixed(0));
       DATAendpointPIB.push(data.PIB.toFixed(2));

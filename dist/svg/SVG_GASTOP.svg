@@ -2505,7 +2505,7 @@
 		</g>
 	</g>
 </g>
-<g id="leyendaHeats_00000152261392942426349730000006955486185020762500_">
+<g id="leyendaHeatsRect">
 	<rect id="H10" x="1479.7" y="138" class="st61" width="79.1" height="33.5"/>
 	<rect id="H20" x="1558.7" y="138" class="st62" width="79.1" height="33.5"/>
 	<rect id="H30" x="1637.8" y="138" class="st63" width="79.1" height="33.5"/>
@@ -2530,7 +2530,7 @@
 	
 		<text id="tituloLeyendaHeats" transform="matrix(1 0 0 1 1742.9121 72.2319)" class="st18 st58 st73" style="text-decoration: underline;">Gasto en pesos</text>
 </g>
-<g id="leyendaAzul_00000138536417023110375820000008091759715051990175_">
+<g id="leyendaAzul">
 	<rect x="1479.7" y="322.9" class="st74" width="79.1" height="33.5"/>
 	<rect x="1558.7" y="322.9" class="st75" width="79.1" height="33.5"/>
 	<rect x="1637.8" y="322.9" class="st76" width="79.1" height="33.5"/>
