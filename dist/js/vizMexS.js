@@ -2,6 +2,7 @@ let endpointPERC = "datos/JSON_PERC.json";
 let endpointPIB = "datos/JSON_PIB.json";
 let endpointGPT = "datos/JSON_GPT.json";
 let endpointmeanPERC = "datos/JSON_meanPERC.json";
+
 //Se activa con boton Orden PERCAPITA
 d3.selectAll(".dropbtn").on("click", function () {
   let tempDrop = d3.select(this).attr("id");
@@ -97,22 +98,7 @@ d3.selectAll(".dropbtn").on("click", function () {
     d3.selectAll("#NUM text").style("fill", "#FFFFFF");
 
     //Asignar valores data- a HEATS SVG
-
-        d3.selectAll("#HEATS path").attr("data-x", function() {
-            var d = d3.select(this).attr("d");
-            var match = /M([\d.]+),([\d.]+)/.exec(d);
-            return match ? match[1] : null;
-        })
-        .attr("data-y", function() {
-            var d = d3.select(this).attr("d");
-            var match = /M([\d.]+),([\d.]+)/.exec(d);
-            return match ? match[2] : null;
-        });
-        
-
-
-
-        let recorrido=0;
+        var recorrido=0;
         for(let fillE =1; fillE<=32; fillE++){
         var pathSelector = "#E" + fillE + " path[data-y]";
         const pathFilter1 = d3.selectAll(pathSelector).filter((d,i) => i <23);
@@ -161,7 +147,7 @@ d3.selectAll(".dropbtn").on("click", function () {
     indicadorSel=d3.select(this).attr("data-GPT");
   }
           //Asignar colores HEATMAP
-        if (indicadorSel <= valMaxPERC*0.1) {
+        if ((indicadorSel <= valMaxPERC*0.1) || (indicadorSel <= 1) ) {
             d3.select(this)
               .transition()
               .duration(1500)
@@ -170,6 +156,16 @@ d3.selectAll(".dropbtn").on("click", function () {
               d3.select("#rangoDiez").text(Math.floor(valMaxPERC*0.1));
               d3.select(this).attr("data-Leyenda", "H10");
           }
+          if (indicadorSel <= 1) {
+              d3.select(this)
+                .transition()
+                .duration(1500)
+                .style("fill", "#FFF1E4")
+                .attr("Recorrido", recorrido);
+                d3.select("#rangoDiez").text("<1");
+                d3.select(this).attr("data-Leyenda", "H10");
+            }
+
           if (indicadorSel > valMaxPERC*0.1 && indicadorSel <= valMaxPERC*0.2) {
             d3.select(this)
               .transition()
@@ -425,22 +421,27 @@ d3.selectAll(".dropbtn").on("click", function () {
         valorEstado = "MEX";
       }
       
-      if(!estransicion[this.id]){
-        estransicion[this.id] = true;
+      // if(!estransicion[this.id]){
+      //   estransicion[this.id] = true;
       
-      d3.select(this)
-      .raise()
-      .transition()
-      .duration(1000)
-      .attr("transform", "scale(1.1)")
-      .style("stroke", "#000000")
-      .style("stroke-width",5)
-      .transition()
-      .duration(1000)
-      .attr("transform", "scale(1)")
-      .style("stroke", "rgb(141,140,140)")
-      .style("stroke-width",1.1042);
-      }
+      // d3.select(this)
+      // .raise()
+      // .style("stroke", "#000000")
+      // .style("stroke-width",5)
+      // .transition()
+      // .duration(500)
+      // .attr("transform", "scale(1.1)")
+      // .transition()
+      // .duration(500)
+      // .transition()
+      // .delay(500)
+      // .on("start", function(){
+      //   console.log("2 SEGUNDOS");
+      // })
+      // .attr("transform", "scale(1)")
+      // .style("stroke", "rgb(141,140,140)")
+      // .style("stroke-width",1.1042);
+      // }
       }
       
       if(parseOrden>16){
@@ -448,17 +449,22 @@ d3.selectAll(".dropbtn").on("click", function () {
         d3.select("#infoESTADOder").text(valorEstado);
         d3.select("#infoANIOder").text(valoresANIO);
         d3.select("#infoPOSICIONder").text(valoresPOSICION);
-        if (valorEstado === "EDOMEX") {
-          valorEstado = "MEX";
-        }
-        d3.select(this)
-        .raise()
-        .transition()
-        .duration(1000)
-        .attr("transform", "skewX(2) skewY(1)")
-        .transition()
-        .duration(1000)
-        .attr("transform", "skewX(0) skewY(0)");
+        // if (valorEstado === "EDOMEX") {
+        //   valorEstado = "MEX";
+        // }
+        // d3.select(this)
+        // .raise()
+        // .transition()
+        // .duration(500)
+        // .attr("transform", "skewX(2) skewY(1)")
+        // .transition()
+        // .delay(500)
+        // .on("start", function(){
+        //   console.log("2 SEGUNDOS");
+        // })
+        // .transition()
+        // .duration(500)
+        // .attr("transform", "skewX(0) skewY(0)");
         }
 
 
@@ -488,4 +494,8 @@ d3.selectAll(".dropbtn").on("click", function () {
 
   });
 });
+
+
+
+
 
