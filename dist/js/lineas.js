@@ -20,7 +20,8 @@ d3.svg("svg/SVG_GASTOP.svg").then(function (datossvg) {
   d3.selectAll("#NUM text").style("fill", "none");
   d3.selectAll("#infoHover text").style("fill", "none");
   d3.selectAll("#variables text").style("fill", "none");
-
+d3.selectAll("#leyendaHeatsRect").style("display","none");
+d3.selectAll("#leyendaAzul").style("display","none");
 
 });
 

@@ -10,10 +10,11 @@
     width: 100%;
     margin: 2% 5%;
     max-width: 100%;
+    border-spacing: 8px;
   }
   
   th {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
     color:whitesmoke;
     padding: 8px;
@@ -21,7 +22,7 @@
   }
 
   td {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
     color:whitesmoke;
     padding: 8px;

@@ -43,9 +43,9 @@
         
         <li><a href="#latamIndicadores" target="_top">Indicadores LATAM</a></li>
         <li><a href="#vizMexS" target="_top">Visualización S Mex</a></li>
+        <li><a href="#hallazgosVizMexS" target="_top">Hallazgos Viz Mex S</a></li>
         
         <li><a href="#mapaMex" target="_top">Mapa Interactivo</a></li>
-        <li><a href="#sankeyHospitales" target="_top">Sankey Hospitales</a></li>
       
         <li><a href="#pagArrow" target="_top">Comparativo Sexenios</a></li>
         <li><a href="#pagHallazgos" target="_top">Hallazgos</a></li>
@@ -210,6 +210,19 @@
   
 </div>
 
+<div id="hallazgosVizMexS" class="trama2 tamFull">
+  <div class="rowCont">
+    <div class="containerTitulo">
+      Hallazgos Viz Mex S
+    </div>
+</div>
+<div class="rowScroll">
+  <section id="scrollPag" class="scrollBoton">
+    <a href="#vizMexS" target="_top"><span></span>Graf S</a>
+  </section>
+</div>
+</div>
+
 <div id="mapaMex" class="gradiente3 tamFull">
   <div class="rowBoton">
 
@@ -337,28 +350,46 @@
 
 <div id="pagArrow" class="fondoViz tamFull">
   <div class="rowBoton"></div>
-  <div class="rowContBoton dosColumnas">
+  <div class="rowCont dosColumnas">
       <div class="col">
       <div class="grafico"></div>
     </div>
     
     <div class="col dosRow"style="overflow-x:hidden;">
-      <div class="row">
-        <div class="textDispGrafico">
-          <p id="TC1">1</p>
-          <p id="TC2">2</p>
-          <p id="TC3">3</p>
-          <p id="TC4">4</p>
-          <p id="TC5">5</p>
-          <p id="TC6">6</p>
-          <p id="TC7">7</p>
-        </div>
-    </div>
     
     <div class="row">
-      <div class="textDispGrafico">
+      <div class="dosColumnas">
+        <div class="col">
+          <div class="textDispGrafico">
+            <p>Estados con Mayor Cambio</p>
+            <p id="estMax1">MAX1</p>
+            <p id="estMax2">MAX2</p>
+            <p id="estMax3">MAX3</p>
+            <p id="estMax4">MAX4</p>
+            <p id="estMax5">MAX5</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="textDispGrafico">
+            <p>Estados con Menor Cambio</p>
+            <p id="estMin1">MIN1</p>
+            <p id="estMin2">MIN2</p>
+            <p id="estMin3">MIN3</p>
+            <p id="estMin4">MIN4</p>
+            <p id="estMin5">MIN5</p>
+          </div>
+        </div>
       </div>
   </div>
+
+  <div class="row">
+    <div class="textDispGrafico">
+      <p id="TC1">1</p>
+      <p id="TC2">2</p>
+      <p id="TC3">3</p>
+    </div>
+</div>
+
     </div>
     
   </div>
@@ -369,19 +400,8 @@
   </div>
   </div>
   
-<div id="sankeyHospitales" class="trama2 tamFull">
-  <div class="rowCont">
-    <div class="containerTitulo">
-      Sankey Hospitales
-    </div>
-</div>
-  
-<div class="rowScroll">
-  <section id="scrollPag" class="scrollBoton">
-    <a href="#mapaMex" target="_top"><span></span>Mapa Mex</a>
-  </section>
-</div>
-</div>
+
+ 
 
 <div id="pagHallazgos" class="trama tamFull">
   <div class="rowHeader"></div>

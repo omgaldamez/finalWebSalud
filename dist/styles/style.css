@@ -92,7 +92,7 @@ h1{
 .dosRow{
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 10%;
+  grid-gap: 0;
 }
 
 .flexContainerEnmedio{
@@ -159,7 +159,7 @@ h1{
 .row {
   display: flex;
   flex:1;
-  background-color: rgba(126, 141, 188, 0.2);
+  background-color: rgba(126, 141, 188, 0);
   padding: 10px;
   text-align: center;
   align-items: center;

@@ -9,16 +9,10 @@
 
 
 
-.grafico2 {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  height: 70vh;
-  top:0;
-}
-
 .textDispGrafico p{
   color:whitesmoke;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
 }
 
 #Estados text{

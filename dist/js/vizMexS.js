@@ -11,14 +11,17 @@ d3.selectAll(".dropbtn").on("click", function () {
   if(tempDrop==="dropbtnPERC"){
     var tempDropSelect = endpointPERC;
     var tempAZULDropSelect = endpointmeanPERC;
+    var printSel = "PERC";
   }
   if(tempDrop==="dropbtnPIB"){
     tempDropSelect = endpointPIB;
     tempAZULDropSelect = endpointmeanPIB;
+    printSel = "PIB";
   }
   if(tempDrop==="dropbtnGPT"){
     tempDropSelect = endpointGPT;
     tempAZULDropSelect = endpointmeanGPT;
+    var printSel = "PIB";
   }
   d3.json(tempDropSelect).then((datosjson) => {
     console.log("ENDPOINT: ", tempDropSelect);
@@ -384,6 +387,9 @@ d3.selectAll(".dropbtn").on("click", function () {
     let matColor = [];
 
 
+    d3.selectAll("#leyendaHeatsRect").style("display","block");
+    d3.selectAll("#leyendaAzul").style("display","block");
+
     var estransicion = {};
 
     //print datos- en SVG con d3
@@ -411,13 +417,25 @@ d3.selectAll(".dropbtn").on("click", function () {
 
         //d3.select(this).transition().duration(1000).attr("transform","matrix(0,1,1,0,0,0)");
 
+        if(tempDrop==="dropbtnPERC"){
+          var printSel = "PERC";
+          var printCirc = valoresPERCAPITA;
+        }
+        if(tempDrop==="dropbtnPIB"){
+          printSel = "PIB";
+          printCirc = valoresPIB;
+        }
+        if(tempDrop==="dropbtnGPT"){
+          var printSel = "PIB";
+          printCirc = valoresGPT;
+        }
 
       let parseOrden = parseInt(valoresPOSICION);
       if(parseOrden<=16){
         d3.selectAll("#CircDer text").text("");
-      d3.select("#infoESTADOizq").text(valorEstado);
-      d3.select("#infoANIOizq").text(valoresANIO);
-      d3.select("#infoPOSICIONizq").text(valoresPOSICION); 
+      d3.select("#infoESTADOizq").text(printCirc);
+      d3.select("#infoANIOizq").text(printSel);
+      d3.select("#infoPOSICIONizq").text(valorEstado); 
       if (valorEstado === "EDOMEX") {
         valorEstado = "MEX";
       }
@@ -447,9 +465,9 @@ d3.selectAll(".dropbtn").on("click", function () {
       
       if(parseOrden>16){
         d3.selectAll("#CircIzq text").text("");
-        d3.select("#infoESTADOder").text(valorEstado);
-        d3.select("#infoANIOder").text(valoresANIO);
-        d3.select("#infoPOSICIONder").text(valoresPOSICION);
+        d3.select("#infoESTADOder").text(printCirc);
+        d3.select("#infoANIOder").text(printSel);
+        d3.select("#infoPOSICIONder").text(valorEstado);
         // if (valorEstado === "EDOMEX") {
         //   valorEstado = "MEX";
         // }
