@@ -21,7 +21,7 @@ d3.selectAll(".dropbtn").on("click", function () {
   if(tempDrop==="dropbtnGPT"){
     tempDropSelect = endpointGPT;
     tempAZULDropSelect = endpointmeanGPT;
-    var printSel = "PIB";
+    printSel = "GPT";
   }
   d3.json(tempDropSelect).then((datosjson) => {
     console.log("ENDPOINT: ", tempDropSelect);
@@ -418,15 +418,12 @@ d3.selectAll(".dropbtn").on("click", function () {
         //d3.select(this).transition().duration(1000).attr("transform","matrix(0,1,1,0,0,0)");
 
         if(tempDrop==="dropbtnPERC"){
-          var printSel = "PERC";
           var printCirc = valoresPERCAPITA;
         }
         if(tempDrop==="dropbtnPIB"){
-          printSel = "PIB";
           printCirc = valoresPIB;
         }
         if(tempDrop==="dropbtnGPT"){
-          var printSel = "PIB";
           printCirc = valoresGPT;
         }
 
