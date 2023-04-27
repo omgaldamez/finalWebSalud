@@ -2,18 +2,23 @@ let endpointPERC = "datos/JSON_PERC.json";
 let endpointPIB = "datos/JSON_PIB.json";
 let endpointGPT = "datos/JSON_GPT.json";
 let endpointmeanPERC = "datos/JSON_meanPERC.json";
+let endpointmeanPIB = "datos/JSON_meanPIB.json";
+let endpointmeanGPT = "datos/JSON_meanGPT.json";
 
 //Se activa con boton Orden PERCAPITA
 d3.selectAll(".dropbtn").on("click", function () {
   let tempDrop = d3.select(this).attr("id");
   if(tempDrop==="dropbtnPERC"){
     var tempDropSelect = endpointPERC;
+    var tempAZULDropSelect = endpointmeanPERC;
   }
   if(tempDrop==="dropbtnPIB"){
     tempDropSelect = endpointPIB;
+    tempAZULDropSelect = endpointmeanPIB;
   }
   if(tempDrop==="dropbtnGPT"){
     tempDropSelect = endpointGPT;
+    tempAZULDropSelect = endpointmeanGPT;
   }
   d3.json(tempDropSelect).then((datosjson) => {
     console.log("ENDPOINT: ", tempDropSelect);
@@ -28,10 +33,15 @@ d3.selectAll(".dropbtn").on("click", function () {
 
     //push a Arrays
     datosjson.data.forEach(function (data) {
+      DATAendpointPERC.push(data.PERCAPITA.toFixed(0));
+      DATAendpointPIB.push(data.PIB.toFixed(2));
+      DATAendpointGPT.push(data.GPT.toFixed(2));
+      DATAendpointEstadoPrint.push(data.EstadoPrint);
       DATAendpointEstado.push(data.Estado);
       DATAendpointANIO.push(data.Anio);
       if(tempDropSelect==endpointPERC){
         DATAendpointPosicion.push(data.OrdenPERC);
+        console.log("DATACHIAPAS: ",DATAendpointPERC[0]);
       }
       if(tempDropSelect==endpointPIB){
         DATAendpointPosicion.push(data.OrdenPIB);
@@ -40,10 +50,6 @@ d3.selectAll(".dropbtn").on("click", function () {
       if(tempDropSelect==endpointGPT){
         DATAendpointPosicion.push(data.OrdenGPT);
       }
-      DATAendpointPERC.push(data.PERCAPITA.toFixed(0));
-      DATAendpointPIB.push(data.PIB.toFixed(2));
-      DATAendpointGPT.push(data.GPT.toFixed(2));
-      DATAendpointEstadoPrint.push(data.EstadoPrint);
     });
 
         //Reverse y Splice
@@ -93,8 +99,20 @@ d3.selectAll(".dropbtn").on("click", function () {
     d3.selectAll("#ANIO path").style("stroke", "#FFFFFF");
     d3.selectAll("#ENTIDAD text").style("fill", "#FFFFFF");
     d3.selectAll("#NUM text").style("fill", "#FFFFFF");
+    d3.selectAll("#HEATS path").style("stroke","#8d8c8c").style("stroke-width", "1.5");
 
     //Asignar valores data- a HEATS SVG
+    d3.selectAll("#HEATS path").attr("data-x", function() {
+      var d = d3.select(this).attr("d");
+      var match = /M([\d.]+),([\d.]+)/.exec(d);
+      return match ? match[1] : null;
+    })
+    .attr("data-y", function() {
+      var d = d3.select(this).attr("d");
+      var match = /M([\d.]+),([\d.]+)/.exec(d);
+      return match ? match[2] : null;
+    });
+
         var recorrido=0;
         for(let fillE =1; fillE<=32; fillE++){
         var pathSelector = "#E" + fillE + " path[data-y]";
@@ -107,28 +125,13 @@ d3.selectAll(".dropbtn").on("click", function () {
           dataYArray.push(parseFloat(dataYValue));
           dataYArray = dataYArray.sort().reverse();
 
-          d3.select(this).attr("data-PERC", function(d,i){
-            var dataNuevos = DATAendpointPERC[recorrido];
-            return dataNuevos;
-          }).attr("data-PIB", function(d,i){
-            dataNuevos = DATAendpointPIB[recorrido];
-            return dataNuevos;
-        }).attr("data-GPT", function(d,i){
-            dataNuevos = DATAendpointGPT[recorrido];
-            return dataNuevos;
-        }).attr("data-ESTADO", function(d,i){
-            dataNuevos = DATAendpointEstado[recorrido];
-            return dataNuevos;
-        }).attr("data-ANIO", function(d,i){
-            dataNuevos = DATAendpointANIO[recorrido];
-            return dataNuevos;
-        }).attr("data-POSICION", function(d,i){
-            dataNuevos = DATAendpointPosicion[recorrido];
-            return dataNuevos;
-        }).attr("data-ESTADOPRINT", function(d,i){
-          dataNuevos = DATAendpointEstadoPrint[recorrido];
-          return dataNuevos;
-      });
+          d3.select(this).attr("data-PERC", DATAendpointPERC[recorrido])
+          .attr("data-PIB", DATAendpointPIB[recorrido]).
+          attr("data-GPT", DATAendpointGPT[recorrido]).
+          attr("data-ESTADO", DATAendpointEstado[recorrido]).
+          attr("data-ANIO", DATAendpointANIO[recorrido]).
+          attr("data-POSICION", DATAendpointPosicion[recorrido]).
+          attr("data-ESTADOPRINT", DATAendpointEstadoPrint[recorrido]);
 
       
   if(tempDrop==="dropbtnPERC"){
@@ -144,7 +147,7 @@ d3.selectAll(".dropbtn").on("click", function () {
     indicadorSel=d3.select(this).attr("data-GPT");
   }
           //Asignar colores HEATMAP
-        if ((indicadorSel <= valMaxPERC*0.1) || (indicadorSel <= 1) ) {
+        if (indicadorSel <= (valMaxPERC*0.1)  ) {
             d3.select(this)
               .transition()
               .duration(1500)
@@ -250,13 +253,15 @@ d3.selectAll(".dropbtn").on("click", function () {
         
         }
 
-        d3.selectAll(".PERCdrop").on("click", function () {
+        d3.selectAll(".AZULdrop").on("click", function () {
           let azulSeleccionado
           azulSeleccionado = d3.select(this).attr("id");
 
+          console.log("ENTRA AZULDROP");
           let valorEstado = d3.select("#E1x1").attr("data-ANIO");
           if (valorEstado > 0.1) {
-            d3.json(endpointmeanPERC).then((datosjson) => {
+            d3.json(tempAZULDropSelect).then((datosjson) => {
+              console.log("ENTRA JSON MEAN: ",tempAZULDropSelect);
               let meanPERC_PERC = [];
               let meanPERC_Estado = [];
               let meanPERC_PIB = [];
@@ -266,7 +271,7 @@ d3.selectAll(".dropbtn").on("click", function () {
               //push a Arrays
               datosjson.data.forEach(function (data) {
                 meanPERC_Estado.push(data.ESTADO);
-                meanPERC_PERC.push(data.PERCAPITA_mean.toFixed(2));
+                meanPERC_PERC.push(data.PERCAPITA.toFixed(2));
                 meanPERC_PIB.push(data.PIB.toFixed(2));
                 meanPERC_GPT.push(data.GPT.toFixed(2));
               });
@@ -399,7 +404,6 @@ d3.selectAll(".dropbtn").on("click", function () {
       d3.select("#infoPIB").text(valoresPIB);
       d3.select("#infoPERCAPITA").text(valoresPERCAPITA);
       d3.select("#infoGPT").text(valoresGPT);
-
     //d3.select(this).transition().duration(1000).attr("transform", "scale(1.1)");
     //d3.select(this).transition().duration(1000).attr("transform", "translate(50,50) scale(0.9)");
 

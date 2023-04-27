@@ -25,7 +25,8 @@
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
-      cursor: pointer;
+      max-height: 200px; /* set max height for the dropdown */
+      overflow-y: auto; /* add scrollbar to the dropdown */
     }
     
     .MAPAdropdown-content a {
@@ -35,7 +36,7 @@
       display: block;
     }
     
-    .MAPAdropdown-content a:hover {background-color: transparent;}
+    .MAPAdropdown-content a:hover {background-color: chocolate;}
     
     .MAPAdropdown:hover .MAPAdropdown-content {display: block;}
     
