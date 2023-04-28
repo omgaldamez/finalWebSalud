@@ -8,7 +8,7 @@
 	.st2{fill:none;}
 	.st3{font-family:'ArialMT';}
 	.st4{font-size:12px;}
-	.st5{font-family:'Montserrat-Regular';}
+	.st5{font-family:'Montserrat-Regular',sans-serif;}
 	.st6{font-size:11.9988px;}
 	.st7{font-size:11.998px;}
 	.st8{font-size:12.0016px;}
@@ -50,7 +50,7 @@
 	.st44{font-size:17.9485px;}
 	.st45{font-size:17.9506px;}
 	.st46{font-size:17.9586px;}
-	.st47{font-family:'Montserrat-Thin';}
+	.st47{font-family:'Montserrat-Thin',sans-serif;}
 	.st48{font-size:15.3102px;}
 	.st49{font-size:15.3151px;}
 	.st50{font-size:15.3067px;}
@@ -67,7 +67,7 @@
 	.st61{font-size:15.3144px;}
 	.st62{font-size:15.3123px;}
 	.st63{font-size:13.2452px;}
-	.st64{font-family:'Montserrat-ExtraBold';}
+	.st64{font-family:'Montserrat-ExtraBold',sans-serif;}
 	.st65{font-size:36px;}
 	.st66{font-size:32px;}
 	.st67{fill:#FFF1E4;}
@@ -80,7 +80,7 @@
 	.st74{fill:#D7530F;}
 	.st75{fill:#B4420E;}
 	.st76{fill:#94360F;}
-	.st77{font-family:'Montserrat-Medium';}
+	.st77{font-family:'Montserrat-Medium',sans-serif;}
 	.st78{font-size:28.9382px;}
 	.st79{font-size:32.5555px;}
 	.st80{fill:#EDF5FC;}
@@ -364,162 +364,162 @@
 		<path id="ENT32_x5F_00000158015257546952386490000003063402703771123383_x5F_" style="fill:none;" d="M2323.238,888.793
 			c8.58-43.379,13.091-88.219,13.091-134.116"/>
 		<text id="ENT32">		<textPath  xlink:href="#ENT32_x5F_00000158015257546952386490000003063402703771123383_x5F_" startOffset="30.6816%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST32</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST32</tspan>		</textPath>
 </text>
 		<path id="ENT31_x5F_00000057120299091328887960000014999399175128353164_x5F_" style="fill:none;" d="M2284.164,1017.774
 			c17.056-41.132,30.233-84.276,39.074-128.981"/>
 		<text id="ENT31">		<textPath  xlink:href="#ENT31_x5F_00000057120299091328887960000014999399175128353164_x5F_" startOffset="26.3775%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST31</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST31</tspan>		</textPath>
 </text>
 		<path id="ENT30_x5F_00000000224054368795558060000004368668654924962738_x5F_" style="fill:none;" d="M2220.542,1136.576
 			c24.903-37.195,46.269-76.955,63.622-118.801"/>
 		<text id="ENT30">		<textPath  xlink:href="#ENT30_x5F_00000000224054368795558060000004368668654924962738_x5F_" startOffset="39.0688%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST30</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST30</tspan>		</textPath>
 </text>
 		<path id="ENT29_x5F_00000095327329622373082930000007553033596216176030_x5F_" style="fill:none;" d="M2135.012,1240.699
 			c31.773-31.773,60.441-66.649,85.53-104.124"/>
 		<text id="ENT29">		<textPath  xlink:href="#ENT29_x5F_00000095327329622373082930000007553033596216176030_x5F_" startOffset="36.041%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST29</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST29</tspan>		</textPath>
 </text>
 		<path id="ENT28_x5F_00000054958457413227060340000001579924224474815883_x5F_" style="fill:none;" d="M2030.889,1326.229
 			c37.474-25.089,72.349-53.756,104.123-85.53"/>
 		<text id="ENT28">		<textPath  xlink:href="#ENT28_x5F_00000054958457413227060340000001579924224474815883_x5F_" startOffset="37.5%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST28</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST28</tspan>		</textPath>
 </text>
 		<path id="ENT27_x5F_00000142875551398795920900000009510908761566623167_x5F_" style="fill:none;" d="M1912.088,1389.85
 			c41.847-17.353,81.606-38.719,118.802-63.62"/>
 		<text id="ENT27">		<textPath  xlink:href="#ENT27_x5F_00000142875551398795920900000009510908761566623167_x5F_" startOffset="36.1051%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST27</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST27</tspan>		</textPath>
 </text>
 		<path id="ENT26_x5F_00000125589899411150699170000001881172701036492733_x5F_" style="fill:none;" d="M1783.106,1428.925
 			c44.705-8.843,87.849-22.018,128.981-39.074"/>
 		<text id="ENT26">		<textPath  xlink:href="#ENT26_x5F_00000125589899411150699170000001881172701036492733_x5F_" startOffset="38.2882%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST26</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST26</tspan>		</textPath>
 </text>
 		<path id="ENT25_x5F_00000106122537124141100450000001109089421797785237_x5F_" style="fill:none;" d="M1648.989,1442.016
 			c45.896,0,90.738-4.511,134.117-13.092"/>
 		<text id="ENT25">		<textPath  xlink:href="#ENT25_x5F_00000106122537124141100450000001109089421797785237_x5F_" startOffset="38.9962%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST25</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST25</tspan>		</textPath>
 </text>
 		<path id="ENT24_x5F_00000147924069019952162720000001350560525138758579_x5F_" style="fill:none;" d="M1514.874,1428.925
 			c43.378,8.58,88.219,13.092,134.116,13.092"/>
 		<text id="ENT24">		<textPath  xlink:href="#ENT24_x5F_00000147924069019952162720000001350560525138758579_x5F_" startOffset="35.8743%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST24</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST24</tspan>		</textPath>
 </text>
 		<path id="ENT23_x5F_00000028319754957794188710000009346906606743445124_x5F_" style="fill:none;" d="M1385.892,1389.85
 			c41.132,17.056,84.276,30.233,128.981,39.074"/>
 		<text id="ENT23">		<textPath  xlink:href="#ENT23_x5F_00000028319754957794188710000009346906606743445124_x5F_" startOffset="35.3516%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST23</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST23</tspan>		</textPath>
 </text>
 		<path id="ENT22_x5F_00000098913989151867301250000000707244593923980947_x5F_" style="fill:none;" d="M1267.091,1326.229
 			c37.195,24.903,76.955,46.269,118.801,63.62"/>
 		<text id="ENT22">		<textPath  xlink:href="#ENT22_x5F_00000098913989151867301250000000707244593923980947_x5F_" startOffset="35.4607%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST22</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST22</tspan>		</textPath>
 </text>
 		<path id="ENT21_x5F_00000149348531087864067990000004828576208314208954_x5F_" style="fill:none;" d="M1162.968,1240.699
 			c31.773,31.773,66.649,60.44,104.124,85.53"/>
 		<text id="ENT21">		<textPath  xlink:href="#ENT21_x5F_00000149348531087864067990000004828576208314208954_x5F_" startOffset="30.2734%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST21</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST21</tspan>		</textPath>
 </text>
 		<path id="ENT20_x5F_00000046328166424312036400000018051739303025397147_x5F_" style="fill:none;" d="M1077.437,1136.576
 			c25.089,37.474,53.757,72.35,85.531,104.124"/>
 		<text id="ENT20">		<textPath  xlink:href="#ENT20_x5F_00000046328166424312036400000018051739303025397147_x5F_" startOffset="36.443%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST20</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST20</tspan>		</textPath>
 </text>
 		<path id="ENT19_x5F_00000155132064808610756820000005364852273657921425_x5F_" style="fill:none;" d="M1013.816,1017.774
 			c17.134,42.016,38.387,81.848,63.62,118.801"/>
 		<text id="ENT19">		<textPath  xlink:href="#ENT19_x5F_00000155132064808610756820000005364852273657921425_x5F_" startOffset="37.207%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST19</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST19</tspan>		</textPath>
 </text>
 		<path id="ENT18_x5F_00000008828634809040235830000005516592762485608606_x5F_" style="fill:none;" d="M974.742,888.793
 			c8.843,44.705,22.018,87.85,39.074,128.981"/>
 		<text id="ENT18">		<textPath  xlink:href="#ENT18_x5F_00000008828634809040235830000005516592762485608606_x5F_" startOffset="31.9401%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST18</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST18</tspan>		</textPath>
 </text>
 		<path id="ENT17_x5F_00000173869130131564853170000005026377105574544288_x5F_" style="fill:none;" d="M961.65,754.676
 			c0,45.896,4.511,90.738,13.091,134.116"/>
 		<text id="ENT17">		<textPath  xlink:href="#ENT17_x5F_00000173869130131564853170000005026377105574544288_x5F_" startOffset="36.9141%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST17</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST17</tspan>		</textPath>
 </text>
 		<path id="ENT16_x5F_00000182497018283253726210000001806577245976898229_x5F_" style="fill:none;" d="M957.636,713.643
 			c2.625,13.273,4.014,26.991,4.014,41.034"/>
 		<text id="ENT16">		<textPath  xlink:href="#ENT16_x5F_00000182497018283253726210000001806577245976898229_x5F_" startOffset="7.1663%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST16</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST16</tspan>		</textPath>
 </text>
 		<path id="ENT15_x5F_00000165917692184854328290000009886638086368748734_x5F_" style="fill:none;" d="M945.681,674.18
 			c5.219,12.585,9.25,25.785,11.956,39.463"/>
 		<text id="ENT15">		<textPath  xlink:href="#ENT15_x5F_00000165917692184854328290000009886638086368748734_x5F_" startOffset="7.5057%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST15</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST15</tspan>		</textPath>
 </text>
 		<path id="ENT14_x5F_00000018922622695665555320000006640888596402915238_x5F_" style="fill:none;" d="M926.219,637.83
 			c7.619,11.38,14.153,23.547,19.462,36.35"/>
 		<text id="ENT14">		<textPath  xlink:href="#ENT14_x5F_00000018922622695665555320000006640888596402915238_x5F_" startOffset="8.3734%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST14</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST14</tspan>		</textPath>
 </text>
 		<path id="ENT13_x5F_00000151534933680952995420000000853927380362614150_x5F_" style="fill:none;" d="M900.054,605.968
 			c9.722,9.722,18.488,20.395,26.165,31.862"/>
 		<text id="ENT13">		<textPath  xlink:href="#ENT13_x5F_00000151534933680952995420000000853927380362614150_x5F_" startOffset="8.0159%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST13</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST13</tspan>		</textPath>
 </text>
 		<path id="ENT12_x5F_00000091709344374769717500000017429000767517022625_x5F_" style="fill:none;" d="M868.192,579.803
 			c11.466,7.677,22.14,16.443,31.862,26.165"/>
 		<text id="ENT12">		<textPath  xlink:href="#ENT12_x5F_00000091709344374769717500000017429000767517022625_x5F_" startOffset="8.5938%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST12</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST12</tspan>		</textPath>
 </text>
 		<path id="ENT11_x5F_00000045614100407003083550000004421003540350434979_x5F_" style="fill:none;" d="M831.842,560.341
 			c12.804,5.309,24.969,11.843,36.35,19.462"/>
 		<text id="ENT11">		<textPath  xlink:href="#ENT11_x5F_00000045614100407003083550000004421003540350434979_x5F_" startOffset="6.6406%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST11</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST11</tspan>		</textPath>
 </text>
 		<path id="ENT10_x5F_00000049203111720240333830000012197539642090222768_x5F_" style="fill:none;" d="M792.379,548.386
 			c13.678,2.705,26.878,6.737,39.463,11.956"/>
 		<text id="ENT10">		<textPath  xlink:href="#ENT10_x5F_00000049203111720240333830000012197539642090222768_x5F_" startOffset="6.3905%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST10</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST10</tspan>		</textPath>
 </text>
 		<path id="ENT9_x5F_00000134248325361204743850000007390189955040021945_x5F_" style="fill:none;" d="M751.344,544.372
 			c14.044,0,27.762,1.389,41.034,4.014"/>
 		<text id="ENT9">		<textPath  xlink:href="#ENT9_x5F_00000134248325361204743850000007390189955040021945_x5F_" startOffset="7.8125%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST9</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST9</tspan>		</textPath>
 </text>
 		<path id="ENT8_x5F_00000027593595758101397730000018368339997228939139_x5F_" style="fill:none;" d="M710.311,548.386
 			c13.273-2.626,26.991-4.014,41.034-4.014"/>
 		<text id="ENT8">		<textPath  xlink:href="#ENT8_x5F_00000027593595758101397730000018368339997228939139_x5F_" startOffset="8.3867%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST8</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST8</tspan>		</textPath>
 </text>
 		<path id="ENT7_x5F_00000168099577993704153690000002376032962978830236_x5F_" style="fill:none;" d="M670.848,560.341
 			c12.585-5.219,25.785-9.25,39.462-11.956"/>
 		<text id="ENT7">		<textPath  xlink:href="#ENT7_x5F_00000168099577993704153690000002376032962978830236_x5F_" startOffset="8.2031%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST7</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST7</tspan>		</textPath>
 </text>
 		<path id="ENT6_x5F_00000129894170065404723760000005184884822915362198_x5F_" style="fill:none;" d="M634.498,579.803
 			c11.38-7.619,23.547-14.153,36.35-19.462"/>
 		<text id="ENT6">		<textPath  xlink:href="#ENT6_x5F_00000129894170065404723760000005184884822915362198_x5F_" startOffset="7.8957%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST6</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST6</tspan>		</textPath>
 </text>
 		<path id="ENT5_x5F_00000072259355602790191600000004273725396913146780_x5F_" style="fill:none;" d="M602.637,605.968
 			c9.722-9.722,20.395-18.488,31.862-26.165"/>
 		<text id="ENT5">		<textPath  xlink:href="#ENT5_x5F_00000072259355602790191600000004273725396913146780_x5F_" startOffset="11.0672%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST5</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST5</tspan>		</textPath>
 </text>
 		<path id="ENT4_x5F_00000165202924012607017070000000205940690524059032_x5F_" style="fill:none;" d="M576.471,637.83
 			c7.677-11.466,16.444-22.14,26.166-31.862"/>
 		<text id="ENT4">		<textPath  xlink:href="#ENT4_x5F_00000165202924012607017070000000205940690524059032_x5F_" startOffset="22.6071%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST4</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST4</tspan>		</textPath>
 </text>
 		<path id="ENT3_x5F_00000042004198282455876030000006376299574597531325_x5F_" style="fill:none;" d="M557.126,674.181
 			c4.948-11.982,11.335-24.275,19.425-36.372"/>
 		<text id="ENT3">		<textPath  xlink:href="#ENT3_x5F_00000042004198282455876030000006376299574597531325_x5F_" startOffset="20.7031%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST3</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST3</tspan>		</textPath>
 </text>
 		<path id="ENT2_x5F_00000021104749241631555830000007322500530542632872_x5F_" style="fill:none;" d="M545.054,713.643
 			c2.515-12.717,6.381-26.02,11.956-39.463"/>
 		<text id="ENT2">		<textPath  xlink:href="#ENT2_x5F_00000021104749241631555830000007322500530542632872_x5F_" startOffset="20.7031%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:12px;">EST2</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:12px;">EST2</tspan>		</textPath>
 </text>
 		<path id="ENT1_x5F_00000019650285346260313940000014140373671659015815_x5F_" style="fill:none;" d="M540.04,765.017
 			c0-14.044,2.389-31.762,5.014-45.034"/>
 		<text id="ENT1">		<textPath  xlink:href="#ENT1_x5F_00000019650285346260313940000014140373671659015815_x5F_" startOffset="28.2899%">
-<tspan  style="font-family:'Montserrat-Regular'; font-size:14.36px;">EST1</tspan>		</textPath>
+<tspan  style="font-family:'Montserrat-Regular',sans-serif; font-size:14.36px;">EST1</tspan>		</textPath>
 </text>
 	</g>
 	<g id="ANIO">
