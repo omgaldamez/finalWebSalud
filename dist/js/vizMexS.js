@@ -437,27 +437,27 @@ d3.selectAll(".dropbtn").on("click", function () {
         valorEstado = "MEX";
       }
       
-      // if(!estransicion[this.id]){
-      //   estransicion[this.id] = true;
+      if(!estransicion[this.id]){
+        estransicion[this.id] = true;
       
-      // d3.select(this)
-      // .raise()
-      // .style("stroke", "#000000")
-      // .style("stroke-width",5)
-      // .transition()
-      // .duration(500)
-      // .attr("transform", "scale(1.1)")
-      // .transition()
-      // .duration(500)
-      // .transition()
-      // .delay(500)
-      // .on("start", function(){
-      //   console.log("2 SEGUNDOS");
-      // })
-      // .attr("transform", "scale(1)")
-      // .style("stroke", "rgb(141,140,140)")
-      // .style("stroke-width",1.1042);
-      // }
+      d3.select(this)
+      .raise()
+      .style("stroke", "#000000")
+      .style("stroke-width",5)
+      .transition()
+      .duration(500)
+      .attr("transform", "scale(1.1)")
+      .transition()
+      .duration(500)
+      .transition()
+      .delay(500)
+      .on("start", function(){
+        console.log("2 SEGUNDOS");
+      })
+      .attr("transform", "scale(1)")
+      .style("stroke", "rgb(141,140,140)")
+      .style("stroke-width",1.1042);
+      }
       }
       
       if(parseOrden>16){
@@ -465,22 +465,22 @@ d3.selectAll(".dropbtn").on("click", function () {
         d3.select("#infoESTADOder").text(printCirc);
         d3.select("#infoANIOder").text(printSel);
         d3.select("#infoPOSICIONder").text(valorEstado);
-        // if (valorEstado === "EDOMEX") {
-        //   valorEstado = "MEX";
-        // }
-        // d3.select(this)
-        // .raise()
-        // .transition()
-        // .duration(500)
-        // .attr("transform", "skewX(2) skewY(1)")
-        // .transition()
-        // .delay(500)
-        // .on("start", function(){
-        //   console.log("2 SEGUNDOS");
-        // })
-        // .transition()
-        // .duration(500)
-        // .attr("transform", "skewX(0) skewY(0)");
+        if (valorEstado === "EDOMEX") {
+          valorEstado = "MEX";
+        }
+        d3.select(this)
+        .raise()
+        .transition()
+        .duration(500)
+        .attr("transform", "skewX(2) skewY(1)")
+        .transition()
+        .delay(500)
+        .on("start", function(){
+          console.log("2 SEGUNDOS");
+        })
+        .transition()
+        .duration(500)
+        .attr("transform", "skewX(0) skewY(0)");
         }
 
 
