@@ -1,0 +1,9 @@
+.grafRegiones {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 90vh;
+    top:0;
+    margin:auto;
+    overflow-x: auto;
+  }

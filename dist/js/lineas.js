@@ -2,6 +2,26 @@ d3.svg("svg/Arrow_S1vsS2.svg").then(function (datossvg) {
   d3.select(".grafico").node().append(datossvg.documentElement);
 });
 
+
+d3.svg("svg/Regiones.svg").then(function (datossvg) {
+  d3.select(".grafRegiones").node().append(datossvg.documentElement);
+  d3.selectAll("#dotsRegiones path").attr("data-color", function() {
+    return d3.select(this).style("fill");
+  }).attr("data-stroke", function() {
+    return d3.select(this).style("stroke");
+  });
+
+
+  d3.selectAll("#dotsRegiones path").style("fill","none").style("stroke","none");
+  d3.selectAll("#violinesRegiones path")
+  .attr("data-fill", function() {
+    return d3.select(this).style("fill");
+  })
+  .style("fill","none");
+
+
+});
+
 d3.svg("svg/MEX.svg").then(function (datossvg) {
   d3.select(".graficoMAPA").node().append(datossvg.documentElement);
   d3.select(".graficoMAPA rect").style("stroke","none");
@@ -24,4 +44,3 @@ d3.selectAll("#leyendaHeatsRect").style("display","none");
 d3.selectAll("#leyendaAzul").style("display","none");
 
 });
-

@@ -104,6 +104,10 @@ h1{
   width: 100vw;
 }
 
+.fondoBlanco{
+  background-color: #f7f7f7;
+}
+
 .fondoViz{
   background-color: #0B2A46;
 }
