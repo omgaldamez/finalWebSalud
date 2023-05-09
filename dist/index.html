@@ -29,6 +29,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script type="module">
+
+  import {easeCubic} from "https://cdn.skypack.dev/d3-ease@3";
+  
+  const e = easeCubic(0.25);
+  
+  </script>
 
 <body>
   
@@ -45,6 +52,7 @@
         <li><a href="#latamIndicadores" target="_top">Indicadores LATAM</a></li>
         <li><a href="#vizMexS" target="_top">Visualización S Mex</a></li>
         <li><a href="#hallazgosVizMexS" target="_top">Hallazgos Viz Mex S</a></li>
+        <li><a href="#Regiones" target="_top">Regiones</a></li>
         
         <li><a href="#mapaMex" target="_top">Mapa Interactivo</a></li>
       
@@ -228,7 +236,13 @@
       </div>
       </div>
       <div class="center-button">
-        <button id="button4">Highlights</button>
+        <button id="opcionesVerRegiones">Ver</button>
+        <div class="dropdown-content">
+        <a id="dropVerAll" class="verRegionesdrop">Todo</a>
+        <a id="dropVerViolines"  class="verRegionesdrop">Violines</a>
+        <a id="dropVerFlechas"  class="verRegionesdrop">Flechas</a>
+        <a id="dropVerDots"  class="verRegionesdrop">Dots</a>
+      </div>
       </div>
       <div class="right-button">
         <button id="button5">Reporte</button>
@@ -393,6 +407,16 @@
     
     <div class="col dosRow"style="overflow-x:hidden;">
     
+
+    
+  <div class="row">
+    <div class="textDispGrafico">
+      <p id="TC1">1</p>
+      <p id="TC2">2</p>
+      <p id="TC3">3</p>
+    </div>
+</div>
+
     <div class="row">
       <div class="dosColumnas">
         <div class="col">
@@ -418,13 +442,6 @@
       </div>
   </div>
 
-  <div class="row">
-    <div class="textDispGrafico">
-      <p id="TC1">1</p>
-      <p id="TC2">2</p>
-      <p id="TC3">3</p>
-    </div>
-</div>
 
     </div>
     

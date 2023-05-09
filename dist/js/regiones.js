@@ -1,6 +1,8 @@
 
+
 d3.selectAll(".dropbtnReg").on("click", function () {
-    //Asignar valores data- a HEATS SVG
+
+    //Asignar x y y dots
     d3.selectAll("#dotsRegiones path").attr("data-x", function() {
         var d = d3.select(this).attr("d");
         var match = /M([\d.]+),([\d.]+)/.exec(d);
@@ -11,33 +13,92 @@ d3.selectAll(".dropbtnReg").on("click", function () {
         var match = /M([\d.]+),([\d.]+)/.exec(d);
         return match ? match[2] : null;
       });
-      
-      d3.selectAll("#violinesRegiones path")
-  .transition()
-  .duration(3000)
-  .style("fill", "#DADADA");
 
+    //Asignar x y y dots
+      d3.selectAll("#violinesRegiones path").attr("data-x", function() {
+        var d = d3.select(this).attr("d");
+        var match = /M([\d.]+),([\d.]+)/.exec(d);
+        return match ? match[1] : null;
+      })
+      .attr("data-y", function() {
+        var d = d3.select(this).attr("d");
+        var match = /M([\d.]+),([\d.]+)/.exec(d);
+        return match ? match[2] : null;
+      });
+
+    //Asignar x y y dots
+    d3.selectAll("#flechasRegiones path").attr("data-x", function() {
+        var d = d3.select(this).attr("d");
+        var match = /M([\d.]+),([\d.]+)/.exec(d);
+        return match ? match[1] : null;
+      })
+      .attr("data-y", function() {
+        var d = d3.select(this).attr("d");
+        var match = /M([\d.]+),([\d.]+)/.exec(d);
+        return match ? match[2] : null;
+      });
 
 //--------------------------------------------
-// set fill and stroke to none
+// regresar a 0 al inicio del click
 d3.selectAll("#dotsRegiones path")
   .style("fill", "none")
-  .style("stroke", "none");
+  .style("stroke", "none")
+  .style("opacity","0");
 
-// animate paths to make each visible
-d3.selectAll("#dotsRegiones path")
+d3.selectAll("#violinesRegiones path")
+.style("fill", "none")
+.style("stroke", "none")
+.style("opacity","0");
+
+d3.selectAll("#flechasRegiones path")
+.style("fill", "none")
+.style("stroke", "none")
+.style("opacity","0");
+
+// transicion violines
+d3.selectAll("#violinesRegiones path")
   .transition()
   .delay(function(d, i) {
     var x = parseFloat(d3.select(this).attr("data-x"));
-    return x * 3; // multiply x position by delay factor
+    return x * 0;
   })
-  .ease(d3.easeLinear) // add ease function
+  .ease(d3.easeQuadIn)
+  .style("fill", function() {
+    return d3.select(this).attr("data-fill");
+  })
+  .style("opacity", "1");
+
+// transicion flechas
+d3.selectAll("#flechasRegiones path")
+  .transition()
+  .delay(function(d, i) {
+    var x = parseFloat(d3.select(this).attr("data-x"));
+    return x * 1;
+  })
+  .ease(d3.easeQuadIn)
   .style("fill", function() {
     return d3.select(this).attr("data-color");
   })
   .style("stroke", function() {
     return d3.select(this).attr("data-stroke");
-  });
+  })
+  .style("opacity","1");
+
+// transicion dots
+d3.selectAll("#dotsRegiones path")
+  .transition()
+  .delay(function(d, i) {
+    var x = parseFloat(d3.select(this).attr("data-x"));
+    return x * 5;
+  })
+  .ease(d3.easeQuadIn)
+  .style("fill", function() {
+    return d3.select(this).attr("data-color");
+  })
+  .style("stroke", function() {
+    return d3.select(this).attr("data-stroke");
+  })
+  .style("opacity","1");
 
 
 
