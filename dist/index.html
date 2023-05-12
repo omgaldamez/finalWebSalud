@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="styles/grafico.css">
   <link rel="stylesheet" href="styles/fTrama.css">
   <link rel="stylesheet" href="styles/tabla.css">
-  <link rel="stylesheet" href="styles/scrolly.css">
+  <link rel="stylesheet" href="styles/regiones.css">
   <link rel="stylesheet" href="styles/vizMexS.css">
   <link rel="stylesheet" href="styles/MAPAMex.css">
   
@@ -29,6 +29,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script type="module">
+
+  import {easeCubic} from "https://cdn.skypack.dev/d3-ease@3";
+  
+  const e = easeCubic(0.25);
+  
+  </script>
 
 <body>
   
@@ -44,8 +51,8 @@
         
         <li><a href="#latamIndicadores" target="_top">Indicadores LATAM</a></li>
         <li><a href="#vizMexS" target="_top">Visualización S Mex</a></li>
-        <li><a href="#regionesMexS" target="_top">regionesMexS</a></li>
         <li><a href="#hallazgosVizMexS" target="_top">Hallazgos Viz Mex S</a></li>
+        <li><a href="#Regiones" target="_top">Regiones</a></li>
         
         <li><a href="#mapaMex" target="_top">Mapa Interactivo</a></li>
       
@@ -77,21 +84,10 @@
   </div>
 
   <div id="defIndicadores" class="tamDoble gradienteDoblePag">
-    <div class="flexContainerEnmedio">
-  <div class="containerEnmedio">
-  
-    <div class="textContainerEnmedio" style="align-items: center; padding-left: 10px;">¿Qué información se puede</div>
-    <div class="textContainerEnmedio" style="justify-content: flex-end; align-items: center; padding-right: 10px;">obtener a partir de los</div>
-    <div class="textContainerEnmedio" style="justify-content: center; align-items: center;">Indicadores de Salud?</div>
-   
-  </div>
-</div>
-
-
+ZZ
 <div id="pagIntroColumnas" class="tamFull">
   <div class="rowBoton">
   </div>
-  
   <div class="rowCont tresColumnas">
     <div class="col">Column 1</div>
     <div class="col middle">Column 2</div>
@@ -206,8 +202,6 @@
         <button id="button5">Reporte</button>
       </div>
   </div>
-
-  
   <div class="rowCont">
     <!-- <div class="containerTitulo">vizMexS
     </div> -->
@@ -218,18 +212,42 @@
   
 </div>
 
+<div id="Regiones" class="fondoBlanco tamFull">
+  <div class="rowBoton">
 
-<div id="regionesMexS" class="trama tamFull">
-  <div class="rowCont">
-    <div class="containerTitulo">
-      Regiones Flourish
+      <div class="left-buttons">
+        <div class="dropdown">
+        <button id="dropbtnPERC" class="dropbtnReg">PERC</button>
     </div>
-</div>
-<div class="rowScroll">
-  <section id="scrollPag" class="scrollBoton">
-    <a href="#vizMexS" target="_top"><span></span>Graf S</a>
-  </section>
-</div>
+    
+    <div class="dropdown">
+        <button id="dropbtnPIB" class="dropbtnReg">PIB</button>
+    </div>
+    <div class="dropdown">
+        <button id="dropbtnGPT" class="dropbtnReg">GPT</button>
+      </div>
+      </div>
+      <div class="center-button">
+        <button id="opcionesVerRegiones">Ver</button>
+        <div class="dropdown-content">
+        <a id="dropVerAll" class="verRegionesdrop">Todo</a>
+        <a id="dropVerViolines"  class="verRegionesdrop">Violines</a>
+        <a id="dropVerFlechas"  class="verRegionesdrop">Flechas</a>
+        <a id="dropVerDots"  class="verRegionesdrop">Dots</a>
+      </div>
+      </div>
+      <div class="right-button">
+        <button id="button5">Reporte</button>
+      </div>
+  </div>
+  <div class="rowCont">
+    <!-- <div class="containerTitulo">vizMexS
+    </div> -->
+    
+    <div class="grafRegiones"></div>
+
+  </div>
+  
 </div>
 
 
@@ -381,6 +399,16 @@
     
     <div class="col dosRow"style="overflow-x:hidden;">
     
+
+    
+  <div class="row">
+    <div class="textDispGrafico">
+      <p id="TC1">1</p>
+      <p id="TC2">2</p>
+      <p id="TC3">3</p>
+    </div>
+</div>
+
     <div class="row">
       <div class="dosColumnas">
         <div class="col">
@@ -406,13 +434,6 @@
       </div>
   </div>
 
-  <div class="row">
-    <div class="textDispGrafico">
-      <p id="TC1">1</p>
-      <p id="TC2">2</p>
-      <p id="TC3">3</p>
-    </div>
-</div>
 
     </div>
     
@@ -461,9 +482,9 @@
   <script  src="js/scrolljs.js"></script>
   <script src="js/GRAF.js"></script>
   <script  src="js/script.js"></script>
-  <script  src="js/scrolly.js"></script>
   <script  src="js/mapa.js"></script>
   <script  src="js/menu.js"></script>
+  <script  src="js/regiones.js"></script>
   <script  src="js/vizMexS.js"></script>
   
 </body>
