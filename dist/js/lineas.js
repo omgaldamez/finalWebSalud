@@ -4,6 +4,7 @@ d3.svg("svg/Arrow_S1vsS2.svg").then(function (datossvg) {
   d3.select(".grafico").node().append(datossvg.documentElement);
 });
 
+
 //Condiciones Iniciales Regiones
 d3.svg("svg/Regiones.svg").then(function (datossvg) {
   d3.select(".grafRegiones").node().append(datossvg.documentElement);
