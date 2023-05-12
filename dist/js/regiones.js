@@ -1,7 +1,6 @@
-
-
 d3.selectAll(".dropbtnReg").on("click", function () {
 
+  
     //Asignar x y y dots
     d3.selectAll("#dotsRegiones path").attr("data-x", function() {
         var d = d3.select(this).attr("d");
@@ -14,7 +13,7 @@ d3.selectAll(".dropbtnReg").on("click", function () {
         return match ? match[2] : null;
       });
 
-    //Asignar x y y dots
+    //Asignar x y y violines
       d3.selectAll("#violinesRegiones path").attr("data-x", function() {
         var d = d3.select(this).attr("d");
         var match = /M([\d.]+),([\d.]+)/.exec(d);
@@ -26,7 +25,7 @@ d3.selectAll(".dropbtnReg").on("click", function () {
         return match ? match[2] : null;
       });
 
-    //Asignar x y y dots
+    //Asignar x y y regiones
     d3.selectAll("#flechasRegiones path").attr("data-x", function() {
         var d = d3.select(this).attr("d");
         var match = /M([\d.]+),([\d.]+)/.exec(d);
