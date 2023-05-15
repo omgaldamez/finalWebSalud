@@ -126,6 +126,16 @@ h1{
   background-repeat: none;
 }
 
+.introGasto {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 90vh;
+  top:0;
+  margin:auto;
+  overflow-x: auto;
+}
+
 .header{
   position: relative;
   color: whitesmoke;

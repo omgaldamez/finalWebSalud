@@ -1,4 +1,12 @@
 
+//Condiciones Iniciales Intro
+d3.select(".introGasto")
+.append("img")
+.attr("src", "svg/IntroGasto.png")
+.style("object-fit", "contain")
+.style("column-span", "all");
+
+
 //Condiciones Iniciales Arrow
 d3.svg("svg/Arrow_S1vsS2.svg").then(function (datossvg) {
   d3.select(".grafico").node().append(datossvg.documentElement);
