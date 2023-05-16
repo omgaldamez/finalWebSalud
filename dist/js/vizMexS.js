@@ -7,21 +7,28 @@ let endpointmeanGPT = "datos/JSON_meanGPT.json";
 
 //Se activa con boton Orden PERCAPITA
 d3.selectAll(".dropbtn").on("click", function () {
+  
   let tempDrop = d3.select(this).attr("id");
   if(tempDrop==="dropbtnPERC"){
     var tempDropSelect = endpointPERC;
     var tempAZULDropSelect = endpointmeanPERC;
     var printSel = "PERC";
+    var printLeyendaNaranja = "Gasto en pesos";
+    var printLeyendaAzul = "Gasto en pesos";
   }
   if(tempDrop==="dropbtnPIB"){
     tempDropSelect = endpointPIB;
     tempAZULDropSelect = endpointmeanPIB;
     printSel = "PIB";
+    printLeyendaNaranja = "% PIB";
+    printLeyendaAzul = "% PIB";
   }
   if(tempDrop==="dropbtnGPT"){
     tempDropSelect = endpointGPT;
     tempAZULDropSelect = endpointmeanGPT;
     printSel = "GPT";
+    printLeyendaNaranja = "% Gasto Público Total";
+    printLeyendaAzul = "% Gasto Público Total";
   }
   d3.json(tempDropSelect).then((datosjson) => {
     console.log("ENDPOINT: ", tempDropSelect);
@@ -155,18 +162,18 @@ d3.selectAll(".dropbtn").on("click", function () {
               .transition()
               .duration(1500)
               .style("fill", "#FFF1E4")
-              .attr("Recorrido", recorrido);
+              .attr("Recorrido", recorrido)
+              .attr("data-Leyenda", "H10");
               d3.select("#rangoDiez").text(Math.floor(valMaxPERC*0.1));
-              d3.select(this).attr("data-Leyenda", "H10");
           }
           if (indicadorSel <= 1) {
               d3.select(this)
                 .transition()
                 .duration(1500)
                 .style("fill", "#FFF1E4")
-                .attr("Recorrido", recorrido);
+                .attr("Recorrido", recorrido)
+                .attr("data-Leyenda", "H10");
                 d3.select("#rangoDiez").text("<1");
-                d3.select(this).attr("data-Leyenda", "H10");
             }
 
           if (indicadorSel > valMaxPERC*0.1 && indicadorSel <= valMaxPERC*0.2) {
@@ -174,9 +181,9 @@ d3.selectAll(".dropbtn").on("click", function () {
               .transition()
               .duration(1500)
               .style("fill", "#FEE1C5")
-              .attr("Recorrido", recorrido);
-              d3.select("#rangoVeinte").text(Math.floor(valMaxPERC*0.2));
-              d3.select(this).attr("data-Leyenda", "H20");
+              .attr("Recorrido", recorrido)
+              .attr("data-Leyenda", "H20");
+              d3.select("#rangoVeinte").text(valMaxPERC*0.2);
           }
           if (indicadorSel > valMaxPERC*0.2 && indicadorSel <= valMaxPERC*0.3) {
             d3.select(this)
@@ -384,13 +391,16 @@ d3.selectAll(".dropbtn").on("click", function () {
           }
         });
     
-    let matColor = [];
-
 
     d3.selectAll("#leyendaHeatsRect").style("display","block");
+    d3.select("#tituloLeyendaHeats").text(printLeyendaNaranja);
     d3.selectAll("#leyendaAzul").style("display","block");
+    d3.select("#tituloLeyendaAzul").text(printLeyendaAzul);
 
-    var estransicion = {};
+    d3.select("#botonHighlights").style("visibility","visible");
+
+
+
 
     //print datos- en SVG con d3
     d3.selectAll("#HEATS path").on("mouseenter", function () {

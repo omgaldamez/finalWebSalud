@@ -29,7 +29,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+
 <script type="module">
+  
 
   import {easeCubic} from "https://cdn.skypack.dev/d3-ease@3";
   
@@ -49,7 +52,6 @@
         <li><a href="#pagIntro" target="_top">Indicadores de Salud</a></li>
         <li><a href="#pagTablaIndicadores" target="_top">Tabla Indicadores</a></li>
         
-        <li><a href="#latamIndicadores" target="_top">Indicadores LATAM</a></li>
         <li><a href="#vizMexS" target="_top">Visualización S Mex</a></li>
         <li><a href="#hallazgosVizMexS" target="_top">Hallazgos Viz Mex S</a></li>
         <li><a href="#Regiones" target="_top">Regiones</a></li>
@@ -76,7 +78,7 @@
 </div>
   <div class="rowScroll">
     <section id="scrollPag" class="scrollBoton">
-      <a href="#defIndicadores" target="_top"><span></span>Comenzar</a>
+      <a href="#pagIntro" target="_top"><span></span>Comenzar</a>
     </section>
   </div>
   
@@ -84,8 +86,6 @@
 
 
 <div id="pagIntro" class="tamFull fijo">
-  <div class="rowBoton">
-  </div>
   
   <div class="introGasto"></div>
   
@@ -144,21 +144,6 @@
 </div>
 
 
-<div id="latamIndicadores" class="trama tamFull">
-  <div class="rowCont">
-    <div class="containerTitulo">
-      Gráfica indicadores LATAM
-    </div>
-</div>
-  
-<div class="rowScroll">
-  <section id="scrollPag" class="scrollBoton">
-    <a href="#vizMexS" target="_top"><span></span>Graf S</a>
-  </section>
-</div>
-</div>
-
-
 <div id="vizMexS" class="gradiente tamFull">
   <div class="rowBoton">
 
@@ -190,7 +175,7 @@
       </div>
       </div>
       <div class="center-button">
-        <button id="button4">Highlights</button>
+        <button id="botonHighlights">Highlights</button>
       </div>
       <div class="right-button">
         <button id="button5">Reporte</button>

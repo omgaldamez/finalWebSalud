@@ -23,23 +23,6 @@ d3.svg("svg/MEX.svg").then(function (datossvg) {
 });
 
 
-//Condiciones Iniciales S
-d3.svg("svg/SVG_GASTOP.svg").then(function (datossvg2) {
-  d3.select(".graficoMexS").node().append(datossvg2.documentElement);
-  
-  d3.select("#FondoTestS rect").style("fill", "none").style("stroke","none");
-  d3.selectAll("#ANIO tspan").style("fill", "none");
-  d3.selectAll("#ANIO text").style("fill", "none");
-  d3.selectAll("#ANIO path").style("stroke", "none");
-  d3.selectAll("#ENTIDAD tspan").style("fill", "none");
-  d3.selectAll("#ENTIDAD text").style("fill", "none");
-  d3.selectAll("#NUM text").style("fill", "none");
-  d3.selectAll("#infoHover text").style("fill", "none");
-  d3.selectAll("#variables text").style("fill", "none");
-d3.selectAll("#leyendaHeatsRect").style("display","none");
-d3.selectAll("#leyendaAzul").style("display","none");
-
-});
 
 
 
@@ -72,4 +55,25 @@ d3.svg("svg/Regiones.svg").then(function (datossvg) {
     return d3.select(this).style("stroke");
   }).style("fill","none")
    .style("opacity","0");
+});
+
+//Condiciones Iniciales S
+d3.svg("svg/SVG_GASTOP.svg").then(function (datossvg2) {
+  d3.select(".graficoMexS").node().append(datossvg2.documentElement);
+  
+  d3.select("#FondoTestS rect").style("fill", "none").style("stroke","none");
+  d3.selectAll("#ANIO tspan").style("fill", "none");
+  d3.selectAll("#ANIO text").style("fill", "none");
+  d3.selectAll("#ANIO path").style("stroke", "none");
+  d3.selectAll("#ENTIDAD tspan").style("fill", "none");
+  d3.selectAll("#ENTIDAD text").style("fill", "none");
+  d3.selectAll("#NUM text").style("fill", "none");
+  d3.selectAll("#infoHover text").style("fill", "none");
+  d3.selectAll("#variables text").style("fill", "none");
+d3.selectAll("#leyendaHeatsRect").style("display","none");
+d3.selectAll("#leyendaAzul").style("display","none");
+d3.selectAll("#Capa_1 text").style("font-family","Montserrat, sans-serif");
+
+d3.select("#botonHighlights").style("visibility","hidden")
+
 });
