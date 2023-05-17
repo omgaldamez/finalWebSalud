@@ -163,6 +163,7 @@ d3.selectAll(".dropbtn").on("click", function () {
               .duration(1500)
               .style("fill", "#FFF1E4")
               .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel)
               .attr("data-Leyenda", "H10");
               d3.select("#rangoDiez").text(Math.floor(valMaxPERC*0.1));
           }
@@ -172,6 +173,7 @@ d3.selectAll(".dropbtn").on("click", function () {
                 .duration(1500)
                 .style("fill", "#FFF1E4")
                 .attr("Recorrido", recorrido)
+                .attr("data-getHL", indicadorSel)
                 .attr("data-Leyenda", "H10");
                 d3.select("#rangoDiez").text("<1");
             }
@@ -182,15 +184,17 @@ d3.selectAll(".dropbtn").on("click", function () {
               .duration(1500)
               .style("fill", "#FEE1C5")
               .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel)
               .attr("data-Leyenda", "H20");
-              d3.select("#rangoVeinte").text(valMaxPERC*0.2);
+              d3.select("#rangoVeinte").text(Math.floor(valMaxPERC*0.2));
           }
           if (indicadorSel > valMaxPERC*0.2 && indicadorSel <= valMaxPERC*0.3) {
             d3.select(this)
               .transition()
               .duration(1500)
               .style("fill", "#FDD0A4")
-              .attr("Recorrido", recorrido);
+              .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel);
               d3.select("#rangoTreinta").text(Math.floor(valMaxPERC*0.3));
               d3.select(this).attr("data-Leyenda", "H30");
           }
@@ -199,7 +203,8 @@ d3.selectAll(".dropbtn").on("click", function () {
               .transition()
               .duration(1500)
               .style("fill", "#FDB87D")
-              .attr("Recorrido", recorrido);
+              .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel);
               d3.select("#rangoCuarenta").text(Math.floor(valMaxPERC*0.4));
               d3.select(this).attr("data-Leyenda", "H40");
           }
@@ -208,7 +213,8 @@ d3.selectAll(".dropbtn").on("click", function () {
               .transition()
               .duration(1500)
               .style("fill", "#FD9E56")
-              .attr("Recorrido", recorrido);
+              .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel);
               d3.select("#rangoCincuenta").text(Math.floor(valMaxPERC*0.5));
               d3.select(this).attr("data-Leyenda", "H50");
           }
@@ -217,7 +223,8 @@ d3.selectAll(".dropbtn").on("click", function () {
               .transition()
               .duration(1500)
               .style("fill", "#F88435")
-              .attr("Recorrido", recorrido);
+              .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel);
               d3.select("#rangoSesenta").text(Math.floor(valMaxPERC*0.6));
               d3.select(this).attr("data-Leyenda", "H60");
           }
@@ -226,7 +233,8 @@ d3.selectAll(".dropbtn").on("click", function () {
               .transition()
               .duration(1500)
               .style("fill", "#EC6A1B")
-              .attr("Recorrido", recorrido);
+              .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel);
               d3.select("#rangoSetenta").text(Math.floor(valMaxPERC*0.7));
               d3.select(this).attr("data-Leyenda", "H70");
           }
@@ -235,7 +243,8 @@ d3.selectAll(".dropbtn").on("click", function () {
               .transition()
               .duration(1500)
               .style("fill", "#D7530F")
-              .attr("Recorrido", recorrido);
+              .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel);
               d3.select("#rangoOchenta").text(Math.floor(valMaxPERC*0.8));
               d3.select(this).attr("data-Leyenda", "H80");
           }
@@ -244,7 +253,8 @@ d3.selectAll(".dropbtn").on("click", function () {
               .transition()
               .duration(1500)
               .style("fill", "#B4420E")
-              .attr("Recorrido", recorrido);
+              .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel);
               d3.select("#rangoNoventa").text(Math.floor(valMaxPERC*0.9));
               d3.select(this).attr("data-Leyenda", "H90");
           }
@@ -253,12 +263,14 @@ d3.selectAll(".dropbtn").on("click", function () {
               .transition()
               .duration(1500)
               .style("fill", "#94360F")
-              .attr("Recorrido", recorrido);
+              .attr("Recorrido", recorrido)
+              .attr("data-getHL", indicadorSel);
               d3.select("#rangoCien").text(Math.floor(valMaxPERC));
               d3.select(this).attr("data-Leyenda", "H100");
           }
           
           recorrido++;
+    
         });
         
         }
@@ -397,9 +409,103 @@ d3.selectAll(".dropbtn").on("click", function () {
     d3.selectAll("#leyendaAzul").style("display","block");
     d3.select("#tituloLeyendaAzul").text(printLeyendaAzul);
 
+ 
     d3.select("#botonHighlights").style("visibility","visible");
 
+    d3.select("#botonHighlights").on("click", function () {      
 
+// Select all elements with the "data-getHL" attribute
+const elements = d3.selectAll("[data-getHL]");
+
+var values = [];
+// Loop through the elements in groups and set the "stroke" attribute for the maximum value in each group
+for (let j = 0; j < 736;) {
+  
+  // Get the values for the current group
+  for (let i = j; i < j + 5; i++) {
+    values.push(parseFloat(elements.nodes()[i].getAttribute("data-getHL"), 10));
+    console.log("VALUES: ",values);
+    console.log("Valor iFOR: ",i);
+  }
+  
+  // Get the maximum value of the current group
+  var maxVal = d3.max(values);
+  values=[];
+  console.log("MAXVALUES: ",maxVal);
+  
+  // Set the "stroke" attribute to "red" for the elements with the maximum value
+  elements.filter(function() {
+    return parseFloat(this.getAttribute("data-getHL"), 10) === maxVal;
+  })
+  .style("stroke","#000000").style("stroke-width",5)
+  .attr("data-max-value", maxVal);
+  maxVal = 0;
+
+    // Get the values for the current group
+    for (let i=j+5; i < j + 11; i++) {
+      values.push(parseFloat(elements.nodes()[i].getAttribute("data-getHL"), 10));
+      console.log("VALUES: ",values);
+    }
+    
+    // Get the maximum value of the current group
+    var maxVal = d3.max(values);
+    values=[];
+    console.log("MAXVALUES: ",maxVal);
+    
+    // Set the "stroke" attribute to "red" for the elements with the maximum value
+    elements.filter(function() {
+      return parseFloat(this.getAttribute("data-getHL"), 10) === maxVal;
+    })
+    .style("stroke","#000000").style("stroke-width",5)
+    .attr("data-max-value", maxVal);
+    maxVal = 0;
+
+  console.log("VZ ITERADA: ",j);
+  
+  console.log("Valor i: ",i);
+
+  // Get the values for the current group
+  for (let i=j+11; i < j + 17; i++) {
+    values.push(parseFloat(elements.nodes()[i].getAttribute("data-getHL"), 10));
+    console.log("VALUES: ",values);
+  }
+  console.log("Valor i for2: ",i);
+  
+  // Get the maximum value of the current group
+  var maxVal = d3.max(values);
+  values=[];
+  console.log("MAXVALUES: ",maxVal);
+  
+  // Set the "stroke" attribute to "red" for the elements with the maximum value
+  elements.filter(function() {
+    return parseFloat(this.getAttribute("data-getHL"), 10) === maxVal;
+  })
+  .style("stroke","#000000").style("stroke-width",5)
+  .attr("data-max-value", maxVal);
+  maxVal = 0;
+
+  // Get the values for the current group
+  for (let i=j+17; i < j + 23; i++) {
+    values.push(parseFloat(elements.nodes()[i].getAttribute("data-getHL"), 10));
+    console.log("VALUES: ",values);
+  }
+  
+  // Get the maximum value of the current group
+  var maxVal = d3.max(values);
+  values=[];
+  console.log("MAXVALUES: ",maxVal);
+  
+  // Set the "stroke" attribute to "red" for the elements with the maximum value
+  elements.filter(function() {
+    return parseFloat(this.getAttribute("data-getHL"), 10) === maxVal;
+  })
+  .style("stroke","#000000").style("stroke-width",5)
+  .attr("data-max-value", maxVal);
+  maxVal = 0;
+j=j+23;
+}
+
+});
 
 
     //print datos- en SVG con d3
