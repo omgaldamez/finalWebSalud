@@ -135,6 +135,16 @@ h1{
   background-repeat: none;
 }
 
+.Hallazgos {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  top:0;
+  margin:auto;
+  overflow-x: auto;
+}
+
 .introGasto {
   display: flex;
   justify-content: center;

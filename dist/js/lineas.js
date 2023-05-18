@@ -77,3 +77,11 @@ d3.selectAll("#Capa_1 text").style("font-family","Montserrat, sans-serif");
 d3.select("#botonHighlights").style("visibility","hidden")
 
 });
+
+//Condiciones Iniciales Hallazgos
+d3.select(".Hallazgos")
+.append("img")
+.attr("src", "svg/Hallazgos.png")
+.style("object-fit", "contain")
+.style("column-span", "all");
+
