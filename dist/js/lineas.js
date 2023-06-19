@@ -14,13 +14,13 @@ d3.svg("svg/Arrow_S1vsS2.svg").then(function (datossvg) {
 
 
 
-
 //Condiciones Iniciales Mapa
 d3.svg("svg/MEX.svg").then(function (datossvg) {
   d3.select(".graficoMAPA").node().append(datossvg.documentElement);
   d3.select(".graficoMAPA rect").style("stroke","none");
   d3.selectAll("#infoHoverMapa text").style("fill","none");
 });
+
 
 
 
